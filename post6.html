@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>혈관 건강 자가 진단 - AI 건강검증단</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@400;700;800&display=swap');
+        body { font-family: 'Nanum Gothic', sans-serif; background-color: #ffffff; line-height: 1.8; }
+        .font-heavy { font-weight: 800; }
+        .content-body p { margin-bottom: 1.5rem; font-size: 1.125rem; color: #334155; }
+        .highlight-blue { background: linear-gradient(to top, #dbeafe 40%, transparent 40%); font-weight: 700; }
+        .calculator-box { background-color: #f8fafc; border: 2px solid #e2e8f0; }
+    </style>
+</head>
+<body class="pb-20">
+    <div class="max-w-lg mx-auto">
+        <nav class="flex items-center justify-between px-5 py-4 border-b sticky top-0 bg-white/90 backdrop-blur-md z-10">
+            <a href="info.html" class="text-slate-400 font-bold">← 리스트로</a>
+            <span class="text-xs font-bold text-slate-300 tracking-widest uppercase">AI Health Report #26</span>
+            <div class="w-10"></div>
+        </nav>
+
+        <header class="px-5 pt-10 pb-6 text-center">
+            <span class="text-sm font-bold text-blue-600 bg-blue-50 px-3 py-1 rounded-full">Cardiovascular Health</span>
+            <h1 class="text-3xl font-heavy text-slate-900 mt-4 leading-tight">
+                검진표의 '정상'보다 중요한 <br><span class="text-blue-600">진짜 혈관 나이</span> 계산법
+            </h1>
+        </header>
+
+        <section class="px-5 mb-10">
+            <div class="calculator-box p-8 rounded-[2rem] shadow-inner">
+                <h3 class="text-lg font-heavy text-slate-800 mb-6 flex items-center">
+                    <span class="bg-blue-600 text-white w-6 h-6 rounded-full flex items-center justify-center text-xs mr-2">!</span>
+                    지금 결과지 숫자를 입력하세요
+                </h3>
+                <div class="space-y-4 text-sm font-bold text-slate-500">
+                    <div>
+                        <label class="block mb-2 ml-1 text-slate-700">중성지방 (TG) 수치</label>
+                        <input type="number" id="tg_val" step="any" placeholder="예: 150" class="w-full p-4 rounded-2xl border-none ring-2 ring-slate-100 focus:ring-blue-500 transition-all text-lg font-bold outline-none">
+                    </div>
+                    <div>
+                        <label class="block mb-2 ml-1 text-slate-700">HDL 콜레스테롤 수치</label>
+                        <input type="number" id="hdl_val" step="any" placeholder="예: 50" class="w-full p-4 rounded-2xl border-none ring-2 ring-slate-100 focus:ring-blue-500 transition-all text-lg font-bold outline-none">
+                    </div>
+                    <button onclick="calculateRatio()" class="w-full py-4 bg-blue-600 text-white rounded-2xl font-heavy text-lg shadow-lg shadow-blue-200 active:scale-95 transition-transform mt-4">
+                        내 위험도 결과 확인하기
+                    </button>
+                </div>
+
+                <div id="result_area" class="mt-8 pt-6 border-t border-slate-200 hidden">
+                    <p class="text-center text-slate-500 font-bold mb-1">당신의 TG/HDL 비율은?</p>
+                    <div id="ratio_score" class="text-5xl font-heavy text-center text-blue-600 mb-4">0.0</div>
+                    <div id="status_box" class="p-4 rounded-2xl text-center font-bold"></div>
+                </div>
+            </div>
+        </section>
+
+        <article class="px-5 content-body">
+            <h3 class="text-2xl font-heavy text-slate-900 mt-10 mb-4">왜 이 비율이 중요한가요?</h3>
+            <p>
+                단순히 콜레스테롤 총합이 낮은 것보다, 중성지방과 HDL의 비율이 높을수록 혈관을 좁게 만드는 <span class="highlight-blue">'작고 조밀한 LDL'</span>이 많을 가능성이 큽니다. 이는 뇌졸중이나 심근경색의 직접적인 원인이 됩니다.
+            </p>
+
+            <h3 class="text-2xl font-heavy text-slate-900 mt-10 mb-4">놓치지 말아야 할 또 다른 수치</h3>
+            <p>
+                <span class="font-bold text-slate-900">1. 당화혈색소 (HbA1c):</span> 5.7%를 넘었다면 이미 혈액이 끈적한 상태입니다. 미세혈관 손상을 막으려면 지금 관리가 필요합니다.
+            </p>
+            <p>
+                <span class="font-bold text-slate-900">2. 호모시스테인:</span> 혈관 내벽에 상처를 내는 독성 물질입니다. 비타민 B군 섭취가 부족할 때 급격히 올라갑니다.
+            </p>
+        </article>
+
+        <footer class="px-5 py-12 bg-slate-50 mt-10 text-center">
+            <p class="text-sm text-slate-400">본 리포트는 AI 건강검증단 분석 결과입니다.<br>개별 수치에 대한 정확한 진단은 전문의와 상담하세요.</p>
+            <a href="info.html" class="inline-block mt-6 px-8 py-3 bg-slate-900 text-white font-bold rounded-full shadow-md">
+                다른 건강 리포트 더보기
+            </a>
+        </footer>
+    </div>
+
+    <script>
+        function calculateRatio() {
+            const tgInput = document.getElementById('tg_val').value;
+            const hdlInput = document.getElementById('hdl_val').value;
+            const resultArea = document.getElementById('result_area');
+            const ratioScore = document.getElementById('ratio_score');
+            const statusBox = document.getElementById('status_box');
+
+            if(!tgInput || !hdlInput) {
+                alert("수치를 모두 입력해주세요.");
+                return;
+            }
+
+            const tg = parseFloat(tgInput);
+            const hdl = parseFloat(hdlInput);
+
+            if(hdl <= 0) {
+                alert("HDL 수치는 0보다 커야 합니다.");
+                return;
+            }
+
+            const ratio = (tg / hdl).toFixed(1);
+            resultArea.classList.remove('hidden');
+            ratioScore.innerText = ratio;
+
+            if(ratio <= 2.0) {
+                statusBox.innerText = "비교적 안전한 상태입니다 ✅";
+                statusBox.className = "p-4 rounded-2xl text-center font-bold bg-green-50 text-green-700";
+            } else if(ratio < 3.0) {
+                statusBox.innerText = "관심이 필요한 단계입니다 ⚠️";
+                statusBox.className = "p-4 rounded-2xl text-center font-bold bg-amber-50 text-amber-700";
+            } else {
+                statusBox.innerText = "혈관 위험 신호! 관리가 시급합니다 🚨";
+                statusBox.className = "p-4 rounded-2xl text-center font-bold bg-red-50 text-red-700";
+            }
+        }
+    </script>
+</body>
+</html>

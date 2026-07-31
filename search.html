@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>건강 제품 검색 - AI 건강검증단</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@400;700;800&display=swap');
+        body { font-family: 'Nanum Gothic', sans-serif; background-color: #fafaf9; }
+        .font-heavy { font-weight: 800; }
+        .product-card { transition: all 0.2s; }
+        .product-card:active { transform: scale(0.98); background-color: #f8fafc; }
+    </style>
+</head>
+<body class="pb-20">
+    <div class="max-w-lg mx-auto px-5">
+        <div class="py-6 flex items-center">
+            <a href="index.html" class="text-slate-400 font-bold mr-4 hover:text-slate-600">← 뒤로</a>
+            <h1 class="text-2xl font-heavy">제품 찾기</h1>
+        </div>
+
+        <div class="mb-4 relative">
+            <input type="text" id="searchInput" placeholder="찾으시는 제품명을 입력하세요 (예: 혈당)" 
+                   class="w-full p-4 pr-20 rounded-2xl border-2 border-slate-200 focus:border-blue-800 outline-none shadow-sm text-lg">
+            <button onclick="handleSearch()" class="absolute right-3 top-3 bg-blue-800 text-white px-5 py-2 rounded-xl font-bold hover:bg-blue-900 transition-colors">검색</button>
+        </div>
+
+        <p class="text-[11px] text-slate-400 text-center mb-8 leading-relaxed">
+            이 포스팅은 쿠팡 파트너스 활동의 일환으로,<br>이에 따른 일정액의 수수료를 제공받습니다.
+        </p>
+
+        <div id="productList" class="space-y-4"></div>
+
+        <footer class="mt-16 text-center border-t border-slate-100 pt-10">
+            <div class="flex justify-center mb-4">
+                <img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fai-health-links.vercel.app&count_bg=%231E3A8A&title_bg=%23E11D48&icon=&icon_color=%23E7E7E7&title=Today+%2F+Total&edge_flat=false" alt="방문자수"/>
+            </div>
+            <p class="text-[10px] text-slate-300 uppercase tracking-tighter">© AI HEALTH CHECK VERIFICATION</p>
+        </footer>
+    </div>
+
+    <script>
+        // 전체 제품 데이터
+        const allProducts = [
+            { name: "통가브리살 수육용 구이용", desc: "잡내 없이 부드러운 기력 보충용 고기", link: "https://link.coupang.com/a/d4opSJ" },
+            { name: "두부 스테이크", desc: "염분은 낮추고 단백질은 높인 건강 반찬", link: "https://link.coupang.com/a/d4oqUA" },
+            { name: "시니어 전용 경추 베개", desc: "뇌가 편안한 숙면을 돕는 기능성 베개", link: "https://link.coupang.com/a/d4oAqg" },
+            { name: "워킹 전용 운동화", desc: "무릎 부담 없는 가벼운 산책 신발", link: "https://link.coupang.com/a/d4oANS" },
+            { name: "요일별 영양제 보관함", desc: "잊지 않고 챙겨 먹는 스마트한 습관", link: "https://link.coupang.com/a/d4oxQh" },
+            { name: "고품질 오메가3", desc: "식사 후 바로 드시는 혈행 개선제", link: "https://link.coupang.com/a/d4oyfs" },
+            { name: "혈당 걱정 없는 간식 세트", desc: "입이 심심할 때 당뇨 걱정 없는 간식", link: "https://link.coupang.com/a/d4ot5j" },
+            { name: "프리미엄 밀크씨슬", desc: "간 건강을 위한 정성 어린 영양제", link: "https://link.coupang.com/a/d4oupO" },
+            { name: "아침용 견과류 세트", desc: "혈당 스파이크 없는 든든한 아침", link: "https://link.coupang.com/a/d4iXzK" },
+            { name: "허리 디스크 보호 베개", desc: "허리 건강을 지켜주는 기능성 설계", link: "https://link.coupang.com/a/d4i3pj" },
+            { name: "바나바잎 추출물 (코로솔산)", desc: "식후 혈당 상승 억제에 도움", link: "https://link.coupang.com/a/d6YURY" },
+            { name: "청정 귀리/현미", desc: "식이섬유가 풍부한 건강 곡물", link: "https://link.coupang.com/a/d6YVFh" },
+            { name: "무설탕 국산 두유", desc: "첨가물 없는 순수한 콩 영양", link: "https://link.coupang.com/a/d6YWVK" },
+            { name: "스테비아 토마토/견과류", desc: "달콤하지만 혈당 걱정 없는 간식", link: "https://link.coupang.com/a/d6YXzf" },
+            { name: "연속/자가 혈당 측정기", desc: "집에서 실시간으로 체크하는 혈당", link: "https://link.coupang.com/a/d6YYP2" },
+            { name: "혈행 개선제", desc: "막힘 없는 혈관 흐름을 위한 관리", link: "https://link.coupang.com/a/d6Y01N" },
+            { name: "뇌 에너지 보조: MCT 오일 (C8)", desc: "포도당 대신 뇌 에너지를 공급해 인슐린 저항성 보완", link: "https://link.coupang.com/a/d7AQAQ" },
+            { name: "뇌 염증 관리: 고함량 커큐민", desc: "뇌에 쌓이는 독소와 염증 제거에 도움", link: "https://link.coupang.com/a/d7AV45" },          
+            { name: "뇌를 깨우는 수분: 미네랄 생수", desc: "밤새 끈적해진 혈액을 맑게 하는 깨끗한 물 한 잔", link: "https://link.coupang.com/a/d7DwmH" },          
+            { name: "혈당 안심 단백질: 구운 달걀 세트", desc: "바쁜 아침, 혈당 스파이크 걱정 없는 최고의 영양식", link: "https://link.coupang.com/a/d7DxRn" },          
+            { name: "공기 질 관리: 공기청정기", desc: "밀폐된 방 안에서도 뇌가 숨 쉴 수 있게 도와줍니다", link: "https://link.coupang.com/a/d8P6nx" },          
+            { name: "빛 완전 차단: 실크 암막 안대", desc: "미세한 불빛까지 차단해 멜라토닌 분비를 극대화합니다", link: "https://link.coupang.com/a/d8QbXg" },          
+            { name: "은나노 항균 칫솔 세트", desc: "세균 번식을 억제하고 잇몸 자극을 최소화하는 5070 추천 칫솔", link: "https://link.coupang.com/a/d9oV5l" },
+            { name: "40수 고중량 순면 수건", desc: "흡수력이 뛰어나고 세탁 후에도 부드러운 안심 수건", link: "https://link.coupang.com/a/d9oVaD" }
+        ];
+
+        const listContainer = document.getElementById('productList');
+        const searchInput = document.getElementById('searchInput');
+
+        // 제품 목록 출력 함수
+        function renderProducts(data) {
+            if (data.length === 0) {
+                listContainer.innerHTML = `
+                    <div class="text-center py-12 bg-white rounded-2xl border border-slate-200">
+                        <p class="text-slate-400 font-bold">검색 결과가 없습니다.</p>
+                        <p class="text-xs text-slate-300 mt-1">다른 검색어로 다시 시도해 보세요.</p>
+                    </div>
+                `;
+                return;
+            }
+
+            listContainer.innerHTML = data.map(p => `
+                <a href="${p.link}" target="_blank" rel="noopener noreferrer" class="block bg-white p-5 rounded-2xl border border-slate-200 shadow-sm product-card">
+                    <h4 class="font-bold text-lg text-slate-900">🎁 ${p.name}</h4>
+                    <p class="text-sm text-slate-500 mt-1">${p.desc}</p>
+                </a>
+            `).join('');
+        }
+
+        // 검색 처리 함수
+        function handleSearch() {
+            const query = searchInput.value.trim().toLowerCase();
+            
+            if (query.length === 0) {
+                renderProducts(allProducts);
+                return;
+            }
+
+            if (query.length < 2) {
+                alert("최소 두 글자는 입력해 주세요!");
+                return;
+            }
+
+            const filtered = allProducts.filter(p => 
+                p.name.toLowerCase().includes(query) || p.desc.toLowerCase().includes(query)
+            );
+            
+            renderProducts(filtered);
+        }
+
+        // 이벤트 리스너 등록
+        document.addEventListener('DOMContentLoaded', () => {
+            renderProducts(allProducts);
+
+            // 엔터키 검색 지원
+            searchInput.addEventListener('keypress', (e) => { 
+                if (e.key === 'Enter') handleSearch(); 
+            });
+
+            // 입력창을 비웠을 때 전체 목록 자동 복원
+            searchInput.addEventListener('input', (e) => {
+                if (e.target.value.trim() === '') {
+                    renderProducts(allProducts);
+                }
+            });
+        });
+    </script>
+</body>
+</html>

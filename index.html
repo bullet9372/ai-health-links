@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI 건강검증단 - 메인</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@400;700;800&display=swap');
+        body { font-family: 'Nanum Gothic', sans-serif; background-color: #fafaf9; }
+        .font-heavy { font-weight: 800; }
+        .touch-link { transition: all 0.1s ease-in-out; }
+        .touch-link:active { transform: scale(0.97); background-color: #f5f5f4; }
+        /* 유튜브 버튼 애니메이션 */
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+        .animate-pulse-slow { animation: pulse 2s infinite; }
+    </style>
+</head>
+<body class="text-slate-800 pb-20">
+    <div class="max-w-lg mx-auto px-5">
+        
+        <!-- 프로필 & 브랜드 헤더 -->
+        <header class="text-center pt-12 pb-8">
+            <img src="aaaa.png" alt="로고" class="w-32 h-32 mx-auto rounded-full border-4 border-white shadow-md mb-4 object-cover">
+            <h1 class="text-3xl font-heavy text-slate-900 mb-2">AI 건강검증단</h1>
+            <p class="text-lg font-bold text-blue-800 mb-8">"정성껏 검증한 건강 정보와 제품"</p>
+            
+<!-- SNS 연결 버튼 -->
+            <div class="flex flex-col sm:flex-row items-center justify-center gap-3 px-2">
+                <a href="https://www.youtube.com/@AI_HealthCheck?sub_confirmation=1" target="_blank" rel="noopener noreferrer"
+                   class="w-full sm:w-auto inline-flex items-center justify-center bg-[#FF0000] text-white px-6 py-3 rounded-full font-bold shadow-lg hover:bg-[#CC0000] transition-all active:scale-95 animate-pulse-slow">
+                    <span class="mr-2 text-xl">▶</span> YouTube 구독
+                </a>
+
+                <a href="https://www.tiktok.com/@ai_healthcheck?is_from_webapp=1&sender_device=pc" target="_blank" rel="noopener noreferrer"
+                   class="w-full sm:w-auto inline-flex items-center justify-center bg-[#000000] text-white px-6 py-3 rounded-full font-bold shadow-lg hover:bg-[#333333] transition-all active:scale-95">
+                    <svg class="w-5 h-5 mr-2 fill-white" viewBox="0 0 448 512" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M448,209.91a210.06,210.06,0,0,1-122.77-39.25V349.38A145.11,145.11,0,1,1,180.31,204.28a143.43,143.43,0,0,1,34.4,4.22V118.11c-11.33-1.46-22.9-2.22-34.71-2.22A231.67,231.67,0,1,0,411.69,347.55V148.82A280.08,280.08,0,0,0,448,157.11V209.91Z"/>
+                    </svg>
+                    TikTok 팔로우
+                </a>
+            </div>
+        </header>
+
+        <!-- 최신 건강 정보 섹션 -->
+        <section class="mb-12">
+            <h2 class="text-2xl font-heavy mb-4 px-1">📝 최신 건강 정보</h2>
+            <div class="space-y-3">
+                <a href="post1.html" class="block bg-white p-5 rounded-2xl border-2 border-slate-100 shadow-sm touch-link">
+                    <span class="text-xs font-bold text-red-500 bg-red-50 px-2 py-1 rounded">팩트체크</span>
+                    <h3 class="text-lg font-bold mt-2">치매 위험 높이는 수면 습관</h3>
+                    <p class="text-sm text-slate-500 mt-1">뇌 노폐물 제거 시스템의 비밀</p>
+                </a>
+                <a href="post2.html" class="block bg-white p-5 rounded-2xl border-2 border-slate-100 shadow-sm touch-link">
+                    <span class="text-xs font-bold text-blue-500 bg-blue-50 px-2 py-1 rounded">식단관리</span>
+                    <h3 class="text-lg font-bold mt-2">당뇨 환자의 아침 과일주스</h3>
+                    <p class="text-sm text-slate-500 mt-1">혈당 스파이크를 방지하는 법</p>
+                </a>
+            </div>
+            <a href="info.html" class="block w-full mt-4 py-3 bg-white text-slate-500 text-center font-bold rounded-2xl border-2 border-dashed border-slate-200 text-sm hover:bg-slate-50 transition-colors">
+                + 더 많은 건강 정보 읽기
+            </a>
+        </section>
+
+        <!-- 추천 인기 제품 섹션 -->
+        <section class="mb-12">
+            <h2 class="text-2xl font-heavy mb-4 px-1">🛍️ 추천 인기 제품</h2>
+            <div class="space-y-3">
+                <a href="https://link.coupang.com/a/d6YYP2" target="_blank" rel="noopener noreferrer" class="block bg-white p-5 rounded-2xl border-2 border-slate-100 shadow-sm touch-link">
+                    <h3 class="font-bold text-lg">🩸 자가 혈당 측정기 세트</h3>
+                    <p class="text-sm text-slate-500 mt-1">집에서 편하게 관리하는 식후 혈당</p>
+                </a>
+                <a href="https://link.coupang.com/a/d5wIIQ" target="_blank" rel="noopener noreferrer" class="block bg-white p-5 rounded-2xl border-2 border-slate-100 shadow-sm touch-link">
+                    <h3 class="font-bold text-lg">🧠 고함량 포스파티딜세린</h3>
+                    <p class="text-sm text-slate-500 mt-1">기억력이 걱정될 때 꼭 필요한 영양제</p>
+                </a>
+            </div>
+            <a href="search.html" class="block w-full mt-6 py-4 bg-slate-800 text-white text-center font-bold rounded-2xl shadow-lg hover:bg-slate-700 transition-colors">
+                + 전체 제품 검색 및 더보기
+            </a>
+        </section>
+
+        <!-- 하단 푸터 -->
+        <footer class="text-center py-10 border-t border-slate-200">
+            <p class="text-xs text-slate-400 leading-relaxed mb-6 px-4">
+                이 포스팅은 쿠팡 파트너스 활동의 일환으로,<br>이에 따른 일정액의 수수료를 제공받습니다.
+            </p>
+            
+            <p class="text-xs text-slate-400 font-bold uppercase tracking-widest mb-4">Real-time Visitors</p>
+            <div class="flex flex-col items-center justify-center space-y-2">
+                <img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fai-health-links.vercel.app&count_bg=%231E3A8A&title_bg=%23E11D48&icon=&icon_color=%23E7E7E7&title=Today+%2F+Total&edge_flat=false" alt="방문자수"/>
+            </div>
+            <p class="text-xs text-slate-300 mt-6 uppercase tracking-tight">© AI HEALTH CHECK VERIFICATION</p>
+        </footer>
+    </div>
+</body>
+</html>
