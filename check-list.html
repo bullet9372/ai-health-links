@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>전체 건강 자가진단 - AI 건강검증단</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@400;700;800&display=swap');
+        body { font-family: 'Nanum Gothic', sans-serif; background-color: #fafaf9; }
+        .font-heavy { font-weight: 800; }
+        .touch-link { transition: all 0.15s ease-in-out; }
+        .touch-link:active { transform: scale(0.98); }
+    </style>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6062349022770025"
+     crossorigin="anonymous"></script>
+</head>
+<body class="text-slate-800 pb-20">
+    <div class="max-w-lg mx-auto px-5 pt-8">
+        
+        <!-- 상단 헤더 -->
+        <div class="flex items-center justify-between mb-6 border-b pb-4">
+            <a href="index.html" class="text-slate-500 font-bold text-sm">← 메인으로</a>
+            <span class="text-xs font-bold bg-blue-100 text-blue-800 px-3 py-1 rounded-full">AI 건강검증 모음집</span>
+        </div>
+
+        <h1 class="text-2xl font-heavy text-slate-900 mb-2">🔍 전체 1분 자가진단</h1>
+        <p class="text-sm text-slate-500 mb-6">영상 및 블로그 속 증상에 맞는 진단을 찾아보세요.</p>
+
+        <!-- 실시간 검색창 -->
+        <div class="mb-6">
+            <input type="text" id="searchInput" onkeyup="filterItems()" 
+                   placeholder="증상 또는 키워드 검색 (예: 목, 안구, 뇌혈관, 족저근막염)" 
+                   class="w-full p-4 border-2 border-slate-200 rounded-2xl text-base focus:outline-none focus:border-blue-600 shadow-sm">
+        </div>
+
+        <!-- 자가진단 리스트 (1~10번 정렬) -->
+        <div id="checkList" class="space-y-3">
+            
+            <!-- 1. 아침 목 담·경추 위험도 자가진단 -->
+            <a href="check-neck.html" class="check-item block bg-white p-5 rounded-2xl border-2 border-slate-100 shadow-sm touch-link" data-title="아침 목 담 경추 위험도 자가진단 뻐근함 팔 저림">
+                <div class="flex items-center justify-between">
+                    <div class="flex items-center space-x-3">
+                        <span class="text-3xl">🧘</span>
+                        <div>
+                            <span class="text-xs font-bold text-red-500 bg-red-50 px-2 py-0.5 rounded">01</span>
+                            <h3 class="text-lg font-bold text-slate-900 mt-1">아침 목 담·경추 위험도 자가진단</h3>
+                            <p class="text-xs text-slate-500 mt-0.5">목 뻐근함, 팔 저림, 자주 발생하는 목 담 상태 체크</p>
+                        </div>
+                    </div>
+                    <span class="text-slate-400 text-xl font-bold">&gt;</span>
+                </div>
+            </a>
+
+            <!-- 2. 안구건조증 & 눈 피로 위험도 자가진단 -->
+            <a href="check-eye.html" class="check-item block bg-white p-5 rounded-2xl border-2 border-slate-100 shadow-sm touch-link" data-title="안구건조증 눈 피로 위험도 자가진단 기상 시 눈 콕콕 이물감 뻑뻑함">
+                <div class="flex items-center justify-between">
+                    <div class="flex items-center space-x-3">
+                        <span class="text-3xl">👁️</span>
+                        <div>
+                            <span class="text-xs font-bold text-blue-500 bg-blue-50 px-2 py-0.5 rounded">02</span>
+                            <h3 class="text-lg font-bold text-slate-900 mt-1">안구건조증 & 눈 피로 위험도 자가진단</h3>
+                            <p class="text-xs text-slate-500 mt-0.5">기상 시 눈 콕콕 찌름, 이물감, 눈꺼풀 뻑뻑함 상태 체크</p>
+                        </div>
+                    </div>
+                    <span class="text-slate-400 text-xl font-bold">&gt;</span>
+                </div>
+            </a>
+
+            <!-- 3. 아침 뇌혈관 & 뇌졸중 위험도 자가진단 -->
+            <a href="check-stroke.html" class="check-item block bg-white p-5 rounded-2xl border-2 border-slate-100 shadow-sm touch-link" data-title="아침 뇌혈관 뇌졸중 위험도 자가진단 안면 마비감 어눌한 발음 한쪽 팔 힘 빠짐">
+                <div class="flex items-center justify-between">
+                    <div class="flex items-center space-x-3">
+                        <span class="text-3xl">🧠</span>
+                        <div>
+                            <span class="text-xs font-bold text-indigo-500 bg-indigo-50 px-2 py-0.5 rounded">03</span>
+                            <h3 class="text-lg font-bold text-slate-900 mt-1">아침 뇌혈관 & 뇌졸중 위험도 자가진단</h3>
+                            <p class="text-xs text-slate-500 mt-0.5">기상 시 안면 마비감, 어눌한 발음, 한쪽 팔 힘 빠짐 체크</p>
+                        </div>
+                    </div>
+                    <span class="text-slate-400 text-xl font-bold">&gt;</span>
+                </div>
+            </a>
+
+            <!-- 4. 아침 기립성 저혈압 & 어지럼증 자가진단 -->
+            <a href="check-dizziness.html" class="check-item block bg-white p-5 rounded-2xl border-2 border-slate-100 shadow-sm touch-link" data-title="아침 기립성 저혈압 어지럼증 자가진단 침대 일어날 때 핑 핑핑 돌음">
+                <div class="flex items-center justify-between">
+                    <div class="flex items-center space-x-3">
+                        <span class="text-3xl">💫</span>
+                        <div>
+                            <span class="text-xs font-bold text-emerald-500 bg-emerald-50 px-2 py-0.5 rounded">04</span>
+                            <h3 class="text-lg font-bold text-slate-900 mt-1">아침 기립성 저혈압 & 어지럼증 자가진단</h3>
+                            <p class="text-xs text-slate-500 mt-0.5">침대에서 일어날 때 핑 도는 어지럼증 및 두통 체크</p>
+                        </div>
+                    </div>
+                    <span class="text-slate-400 text-xl font-bold">&gt;</span>
+                </div>
+            </a>
+
+            <!-- 5. 아침 속쓰림 & 위산역류 자가진단 -->
+            <a href="check-stomach.html" class="check-item block bg-white p-5 rounded-2xl border-2 border-slate-100 shadow-sm touch-link" data-title="아침 속쓰림 위산역류 자가진단 기상 직후 목 이물감 쓴물 가슴 쓰라림">
+                <div class="flex items-center justify-between">
+                    <div class="flex items-center space-x-3">
+                        <span class="text-3xl">🧪</span>
+                        <div>
+                            <span class="text-xs font-bold text-amber-500 bg-amber-50 px-2 py-0.5 rounded">05</span>
+                            <h3 class="text-lg font-bold text-slate-900 mt-1">아침 속쓰림 & 위산역류 자가진단</h3>
+                            <p class="text-xs text-slate-500 mt-0.5">기상 직후 목 이물감, 쓴물 올라옴, 가슴 쓰라림 체크</p>
+                        </div>
+                    </div>
+                    <span class="text-slate-400 text-xl font-bold">&gt;</span>
+                </div>
+            </a>
+
+            <!-- 6. 아침 관절 뻣뻣함 & 조조강직 자가진단 -->
+            <a href="check-joint.html" class="check-item block bg-white p-5 rounded-2xl border-2 border-slate-100 shadow-sm touch-link" data-title="아침 관절 뻣뻣함 조조강직 자가진단 손가락 굳음 구부리기 힘듦 마디 붓기">
+                <div class="flex items-center justify-between">
+                    <div class="flex items-center space-x-3">
+                        <span class="text-3xl">🖐️</span>
+                        <div>
+                            <span class="text-xs font-bold text-orange-500 bg-orange-50 px-2 py-0.5 rounded">06</span>
+                            <h3 class="text-lg font-bold text-slate-900 mt-1">아침 관절 뻣뻣함 & 조조강직 자가진단</h3>
+                            <p class="text-xs text-slate-500 mt-0.5">손가락 뻣뻣함, 구부리기 힘듦, 손가락 마디 붓기 체크</p>
+                        </div>
+                    </div>
+                    <span class="text-slate-400 text-xl font-bold">&gt;</span>
+                </div>
+            </a>
+
+            <!-- 7. 아침 구강건조 & 안구건조 자가진단 -->
+            <a href="check-dry.html" class="check-item block bg-white p-5 rounded-2xl border-2 border-slate-100 shadow-sm touch-link" data-title="아침 구강건조 안구건조 자가진단 입안 바짝 타들어감 모래알 뻑뻑함">
+                <div class="flex items-center justify-between">
+                    <div class="flex items-center space-x-3">
+                        <span class="text-3xl">👁️</span>
+                        <div>
+                            <span class="text-xs font-bold text-rose-500 bg-rose-50 px-2 py-0.5 rounded">07</span>
+                            <h3 class="text-lg font-bold text-slate-900 mt-1">아침 구강건조 & 안구건조 자가진단</h3>
+                            <p class="text-xs text-slate-500 mt-0.5">기상 직후 입안의 텁텁함과 눈의 뻑뻑함 증상 체크</p>
+                        </div>
+                    </div>
+                    <span class="text-slate-400 text-xl font-bold">&gt;</span>
+                </div>
+            </a>
+
+            <!-- 8. 아침 두통 & 뇌혈관 신호 자가진단 -->
+            <a href="check-headache.html" class="check-item block bg-white p-5 rounded-2xl border-2 border-slate-100 shadow-sm touch-link" data-title="아침 두통 뇌혈관 신호 자가진단 머리 묵직함 뒷목 뻣뻣함 지끈거림">
+                <div class="flex items-center justify-between">
+                    <div class="flex items-center space-x-3">
+                        <span class="text-3xl">🤕</span>
+                        <div>
+                            <span class="text-xs font-bold text-teal-500 bg-teal-50 px-2 py-0.5 rounded">08</span>
+                            <h3 class="text-lg font-bold text-slate-900 mt-1">아침 두통 & 뇌혈관 신호 자가진단</h3>
+                            <p class="text-xs text-slate-500 mt-0.5">잠에서 깰 때 머리가 묵직하거나 깨질 듯이 아픈 증상 체크</p>
+                        </div>
+                    </div>
+                    <span class="text-slate-400 text-xl font-bold">&gt;</span>
+                </div>
+            </a>
+
+            <!-- 9. 수면 장애 & 아침 만성피로 자가진단 -->
+            <a href="check-sleep.html" class="check-item block bg-white p-5 rounded-2xl border-2 border-slate-100 shadow-sm touch-link" data-title="수면 장애 아침 만성피로 자가진단 자고 일어나도 피곤 코골이 무호흡 개운하지 않은 아침">
+                <div class="flex items-center justify-between">
+                    <div class="flex items-center space-x-3">
+                        <span class="text-3xl">🥱</span>
+                        <div>
+                            <span class="text-xs font-bold text-violet-500 bg-violet-50 px-2 py-0.5 rounded">09</span>
+                            <h3 class="text-lg font-bold text-slate-900 mt-1">수면 장애 & 아침 만성피로 자가진단</h3>
+                            <p class="text-xs text-slate-500 mt-0.5">자고 일어나도 피곤함, 수면 중 코골이/무호흡, 개운하지 않은 아침 체크</p>
+                        </div>
+                    </div>
+                    <span class="text-slate-400 text-xl font-bold">&gt;</span>
+                </div>
+            </a>
+
+            <!-- 10. 혈액순환 & 손발 저림 자가진단 -->
+            <a href="check-circulation.html" class="check-item block bg-white p-5 rounded-2xl border-2 border-slate-100 shadow-sm touch-link" data-title="혈액순환 손발 저림 자가진단 아침 손발 차가움 부종 시림 쥐 남 증상">
+                <div class="flex items-center justify-between">
+                    <div class="flex items-center space-x-3">
+                        <span class="text-3xl">🩸</span>
+                        <div>
+                            <span class="text-xs font-bold text-sky-500 bg-sky-50 px-2 py-0.5 rounded">10</span>
+                            <h3 class="text-lg font-bold text-slate-900 mt-1">혈액순환 & 손발 저림 자가진단</h3>
+                            <p class="text-xs text-slate-500 mt-0.5">아침 손발 차가움, 부종, 손발 시림 및 쥐 남 증상 체크</p>
+                        </div>
+                    </div>
+                    <span class="text-slate-400 text-xl font-bold">&gt;</span>
+                </div>
+            </a>
+
+        </div>
+
+        <!-- 검색 결과 없음 안내 -->
+        <div id="noResult" class="hidden text-center py-12 text-slate-400">
+            <p class="text-lg font-bold">검색 결과가 없습니다.</p>
+            <p class="text-sm mt-1">다른 키워드로 검색해 보세요.</p>
+        </div>
+
+    </div>
+
+    <!-- 검색 기능 JS -->
+    <script>
+        function filterItems() {
+            const query = document.getElementById('searchInput').value.toLowerCase();
+            const items = document.querySelectorAll('.check-item');
+            let hasResult = false;
+
+            items.forEach(item => {
+                const keywords = item.getAttribute('data-title').toLowerCase();
+                if (keywords.includes(query)) {
+                    item.style.display = "block";
+                    hasResult = true;
+                } else {
+                    item.style.display = "none";
+                }
+            });
+
+            document.getElementById('noResult').style.display = hasResult ? "none" : "block";
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>전체 건강 아티클 - AI 건강검증단</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@400;700;800&display=swap');
+        body { font-family: 'Nanum Gothic', sans-serif; background-color: #f8fafc; }
+        .font-heavy { font-weight: 800; }
+    </style>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6062349022770025"
+     crossorigin="anonymous"></script>
+</head>
+<body class="text-slate-800 pb-20">
+    <div class="max-w-lg mx-auto px-4 pt-6">
+        
+        <!-- 상단 헤더 -->
+        <div class="flex items-center justify-between mb-6">
+            <a href="index.html" class="text-sm font-bold text-slate-500 hover:text-slate-800">← 메인으로</a>
+            <h1 class="text-lg font-heavy text-slate-900">전체 건강 아티클</h1>
+            <div class="w-12"></div>
+        </div>
+
+        <!-- 정렬 바 -->
+        <div class="flex items-center justify-between bg-white p-3 rounded-2xl border border-slate-200 mb-4 text-xs font-bold">
+            <span class="text-slate-500">총 <span id="total-count" class="text-blue-600">21</span>개 글</span>
+            <div class="flex space-x-2">
+                <button id="sort-desc" onclick="setSort('desc')" class="px-3 py-1 rounded-lg bg-slate-800 text-white">최신순</button>
+                <button id="sort-asc" onclick="setSort('asc')" class="px-3 py-1 rounded-lg bg-slate-100 text-slate-600">오래된순</button>
+            </div>
+        </div>
+
+        <!-- 아티클 리스트 영역 -->
+        <div id="article-list" class="space-y-2.5 mb-6"></div>
+
+        <!-- 페이지네이션 -->
+        <div id="pagination" class="flex items-center justify-center space-x-2"></div>
+
+    </div>
+
+    <script>
+        const articles = [
+            { id: 1, title: "01. 영양제 올바른 복용 시간표 & 콩팥 보호", file: "01_영양제_복용시간표.html", category: "영양제/식습관" },
+            { id: 2, title: "02. 혈당 스파이크 잡는 거꾸로 식사법", file: "02_혈당스파이크_거꾸로식사법.html", category: "영양제/식습관" },
+            { id: 3, title: "03. 아침 관절 뻣뻣함 3분 침대 시동 루틴", file: "03_아침_관절_뻣뻣함_해결.html", category: "관절/통증" },
+            { id: 4, title: "04. 만성피로 & 눈 침침함 간 경고신호 5가지", file: "04_간건강_경고신호.html", category: "혈관/눈/간" },
+            { id: 5, title: "05. 자다 깨서 소변보는 야간뇨 예방 루틴", file: "05_야간뇨_예방_루틴.html", category: "수면/야간" },
+            { id: 6, title: "06. 자다가 다리 쥐(경련) 날 때 1분 대처법", file: "06_야간_다리쥐_스트레칭.html", category: "수면/야간" },
+            { id: 7, title: "07. 오십견 어깨 통증 완화 시계추 운동", file: "07_퇴행성_관절염_연골_관리.html", category: "관절/통증" },
+            { id: 8, title: "08. 역류성 식도염 & 속쓰림 예방 수칙", file: "08_역류성식도염_예방수칙.html", category: "영양제/식습관" },
+            { id: 9, title: "09. 아침 첫발 뒤꿈치 찌릿! 족저근막염 루틴", file: "09_족저근막염_발바닥스트레칭.html", category: "관절/통증" },
+            { id: 10, title: "10. 계단 내리막 무릎 통증 예방 운동", file: "10_퇴행성_무릎관절염_습관.html", category: "관절/통증" },
+            { id: 11, title: "11. 불면증 덜어주는 5분 꿀잠 4-7-8 호흡법", file: "11_수면의질_5분_꿀잠루틴.html", category: "수면/야간" },
+            { id: 12, title: "12. 기상 직후 공복 최고 vs 최악의 음식", file: "12_공복식단_음식_조합.html", category: "영양제/식습관" },
+            { id: 13, title: "13. 24시간 혈액순환 종아리 펌프 루틴", file: "13_혈액순환_24시간_타임라인.html", category: "혈관/눈/간" },
+            { id: 14, title: "14. 무릎 연골 수명 늘리는 팩트체크", file: "14_무릎연골_OX_팩트체크.html", category: "관절/통증" },
+            { id: 15, title: "15. 안구건조증 기름샘 녹이는 5분 온찜질", file: "15_안구건조증_온찜질_루틴.html", category: "혈관/눈/간" },
+            { id: 16, title: "16. 아침 기상 시 뇌혈관 지키는 이웃손 체크", file: "16_아침_뇌혈관_안전습관.html", category: "혈관/눈/간" },
+            { id: 17, title: "17. 아침 첫발 통증 줄이는 1분 발가락 루틴", file: "17_아침_첫발통증_1분루틴.html", category: "관절/통증" },
+            { id: 18, title: "18. 기상 시 허리 굳음 1분 스트레칭", file: "18_아침_허리통증_1분루틴.html", category: "관절/통증" },
+            { id: 19, title: "19. 밤마다 손 찌릿한 손목터널증후군 관리", file: "19_손목터널증후군_손저림_루틴.html", category: "관절/통증" },
+            { id: 20, title: "20. 자고 일어난 목 담 푸는 1분 투턱 운동", file: "20_아침_목담_1분루틴.html", category: "관절/통증" },
+            { id: 21, title: "21. 아침 손가락 뻣뻣할 때 3초 잼잼 루틴", file: "21_아침_손가락강직_1분루틴.html", category: "관절/통증" }
+        ];
+
+        let currentSort = 'desc'; // 기본: 최신순
+        let currentPage = 1;
+        const itemsPerPage = 10;
+
+        function setSort(type) {
+            currentSort = type;
+            currentPage = 1;
+            
+            document.getElementById('sort-desc').className = type === 'desc' ? 'px-3 py-1 rounded-lg bg-slate-800 text-white' : 'px-3 py-1 rounded-lg bg-slate-100 text-slate-600';
+            document.getElementById('sort-asc').className = type === 'asc' ? 'px-3 py-1 rounded-lg bg-slate-800 text-white' : 'px-3 py-1 rounded-lg bg-slate-100 text-slate-600';
+            
+            render();
+        }
+
+        function render() {
+            const sortedData = [...articles].sort((a, b) => {
+                return currentSort === 'desc' ? b.id - a.id : a.id - b.id;
+            });
+
+            const totalPages = Math.ceil(sortedData.length / itemsPerPage);
+            const startIdx = (currentPage - 1) * itemsPerPage;
+            const pageData = sortedData.slice(startIdx, startIdx + itemsPerPage);
+
+            const listEl = document.getElementById('article-list');
+            listEl.innerHTML = pageData.map(item => `
+                <a href="${item.file}" class="block bg-white p-4 rounded-2xl border border-slate-200 hover:border-blue-500 transition-colors">
+                    <div class="flex items-center justify-between">
+                        <span class="text-xs font-bold text-blue-600 bg-blue-50 px-2 py-0.5 rounded">${item.category}</span>
+                        <span class="text-xs text-slate-400">#${item.id}</span>
+                    </div>
+                    <h2 class="font-bold text-slate-900 mt-2 text-sm sm:text-base">${item.title}</h2>
+                </a>
+            `).join('');
+
+            // 페이지네이션
+            const pageEl = document.getElementById('pagination');
+            let pageBtns = '';
+            for(let i = 1; i <= totalPages; i++) {
+                const active = i === currentPage ? 'bg-blue-600 text-white' : 'bg-white text-slate-700 border border-slate-200';
+                pageBtns += `<button onclick="goToPage(${i})" class="w-9 h-9 rounded-xl font-bold text-xs ${active}">${i}</button>`;
+            }
+            pageEl.innerHTML = pageBtns;
+        }
+
+        function goToPage(page) {
+            currentPage = page;
+            render();
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        render();
+    </script>
+</body>
+</html>

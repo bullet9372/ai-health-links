@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>아침 두통 & 뇌혈관 신호 진단 결과 - AI 건강검증단</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@400;700;800&display=swap');
+        body { font-family: 'Nanum Gothic', sans-serif; background-color: #fafaf9; }
+        .font-heavy { font-weight: 800; }
+        .touch-link { transition: all 0.15s ease-in-out; }
+        .touch-link:active { transform: scale(0.98); }
+    </style>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6062349022770025"
+     crossorigin="anonymous"></script>
+</head>
+<body class="text-slate-800 pb-20">
+    <div class="max-w-lg mx-auto px-5 pt-8">
+        
+        <!-- 헤더 -->
+        <div class="flex items-center justify-between mb-6 border-b pb-4">
+            <a href="index.html" class="text-slate-500 font-bold text-sm">← 메인으로 돌아가기</a>
+            <span class="text-xs font-bold bg-purple-100 text-purple-800 px-3 py-1 rounded-full">🧠 뇌/두통 진단 결과</span>
+        </div>
+
+        <!-- 진단 결과 카드 -->
+        <div id="resultCard" class="bg-white p-6 rounded-3xl border-2 border-slate-100 shadow-md mb-6 text-center">
+            <span id="riskBadge" class="inline-block text-xs font-heavy px-3 py-1 rounded-full mb-3">분석 중...</span>
+            <h1 id="resultTitle" class="text-2xl font-heavy text-slate-900 mb-2">진단 결과를 불러오는 중입니다</h1>
+            <p id="resultDesc" class="text-sm text-slate-600 leading-relaxed"></p>
+        </div>
+
+        <!-- 아침 두통 예방 전용 1분 케어 루틴 -->
+        <div class="space-y-4 mb-8">
+            <h2 class="text-xl font-heavy text-slate-900 px-1">💡 침대에서 딱 1분! 뇌혈류 릴랙스 루틴</h2>
+
+            <div class="bg-white p-5 rounded-2xl border-2 border-slate-100 shadow-sm space-y-2">
+                <div class="flex items-center justify-between">
+                    <span class="text-sm font-heavy text-purple-600">루틴 01</span>
+                    <span class="text-xs bg-slate-100 text-slate-600 px-2 py-0.5 rounded font-bold">15초간 실시</span>
+                </div>
+                <h3 class="font-bold text-slate-900 text-base">목 지압 & 부드러운 목 스트레칭</h3>
+                <div class="text-xs bg-red-50 text-red-600 p-2.5 rounded-xl font-bold">
+                    ❌ 위험 행동: 목에서 뚝 소리가 나도록 세게 꺾거나 젖히는 과도한 스트레칭 행동입니다.
+                </div>
+                <p class="text-sm text-slate-700 leading-relaxed">
+                    <strong class="text-purple-700">✅ 바로 할 수 있는 해결책:</strong><br>
+                    양손 엄지로 뒷목 풍지혈(머리와 목이 만나는 오목한 곳)을 지그시 누르고 고개를 천천히 좌우로 숙여주세요.
+                </p>
+                <p class="text-xs text-slate-500 bg-slate-50 p-2.5 rounded-xl mt-1">
+                    💡 <strong>왜 그럴까요?</strong><br>
+                    수면 중 경직된 후두하근을 풀어 뇌로 들어가는 혈류 순환을 촉진하고 긴장성 두통을 완화합니다.
+                </p>
+            </div>
+
+            <div class="bg-white p-5 rounded-2xl border-2 border-slate-100 shadow-sm space-y-2">
+                <div class="flex items-center justify-between">
+                    <span class="text-sm font-heavy text-purple-600">루틴 02</span>
+                    <span class="text-xs bg-slate-100 text-slate-600 px-2 py-0.5 rounded font-bold">기상 즉시</span>
+                </div>
+                <h3 class="font-bold text-slate-900 text-base">수분 공급으로 체내 혈액 끈적임 해소</h3>
+                <div class="text-xs bg-red-50 text-red-600 p-2.5 rounded-xl font-bold">
+                    ❌ 위험 행동: 두통을 줄이겠다고 일어나자마자 빈속에 진한 고카페인 커피를 마시는 행동입니다.
+                </div>
+                <p class="text-sm text-slate-700 leading-relaxed">
+                    <strong class="text-purple-700">✅ 바로 할 수 있는 해결책:</strong><br>
+                    미지근한 물 한 잔을 천천히 마셔 자는 동안 탈수로 인해 점도가 높아진 혈액을 묽게 만들어 주세요.
+                </p>
+                <p class="text-xs text-slate-500 bg-slate-50 p-2.5 rounded-xl mt-1">
+                    💡 <strong>왜 그럴까요?</strong><br>
+                    수면 중 수분 부족은 혈액 점도를 높여 뇌 미세혈관의 저항을 유발하고 아침 두통을 유발할 수 있습니다.
+                </p>
+            </div>
+
+            <div class="bg-white p-5 rounded-2xl border-2 border-slate-100 shadow-sm space-y-2">
+                <div class="flex items-center justify-between">
+                    <span class="text-sm font-heavy text-purple-600">루틴 03</span>
+                    <span class="text-xs bg-slate-100 text-slate-600 px-2 py-0.5 rounded font-bold">수면 케어</span>
+                </div>
+                <h3 class="font-bold text-slate-900 text-base">수면 무호흡 및 베개 높이 점검</h3>
+                <div class="text-xs bg-red-50 text-red-600 p-2.5 rounded-xl font-bold">
+                    ❌ 위험 행동: 목이 앞으로 심하게 꺾이는 높은 베개를 사용하거나 코골이를 방치하는 행동입니다.
+                </div>
+                <p class="text-sm text-slate-700 leading-relaxed">
+                    <strong class="text-purple-700">✅ 바로 할 수 있는 해결책:</strong><br>
+                    목 뼈의 C자 곡선을 유지해 주는 경추 베개를 사용하고, 코골이나 수면 무호흡증이 있다면 측면 수면을 취하세요.
+                </p>
+                <p class="text-xs text-slate-500 bg-slate-50 p-2.5 rounded-xl mt-1">
+                    💡 <strong>왜 그럴까요?</strong><br>
+                    수면 중 체내 이산화탄소가 축적되고 산소가 부족해지면 뇌혈관이 확장하면서 심한 아침 두통을 일으킵니다.
+                </p>
+            </div>
+
+            <!-- 👣 뇌혈류 릴랙스 3단계 요약 -->
+            <div class="bg-gradient-to-r from-purple-50 to-indigo-50 border-2 border-purple-100 p-5 rounded-2xl">
+                <h3 class="font-heavy text-slate-900 text-base mb-2">👣 아침 뇌 케어 3단계 요약</h3>
+                <p class="text-xs text-slate-600 mb-3">매일 아침 침대에서 머리를 맑게 깨워주세요!</p>
+                <ul class="text-sm text-slate-800 space-y-2 font-bold">
+                    <li class="flex items-start"><span class="text-purple-600 mr-2">•</span> [뒷목 이완] 풍지혈 지압 및 경추 부드럽게 스트레칭</li>
+                    <li class="flex items-start"><span class="text-purple-600 mr-2">•</span> [혈액 순환] 미지근한 물 한 잔으로 혈액 점도 완화</li>
+                    <li class="flex items-start"><span class="text-purple-600 mr-2">•</span> [산소 공급] 경추 곡선에 맞는 베개 사용 및 수면 자세 개선</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- 추천 인기 제품 섹션 -->
+        <section class="mb-8">
+            <h2 class="text-xl font-heavy mb-4 px-1">🛍️ 추천 인기 제품</h2>
+            <div class="space-y-3">
+                <a href="https://link.coupang.com/a/d6YYP2" target="_blank" rel="noopener noreferrer" class="block bg-white p-5 rounded-2xl border-2 border-slate-100 shadow-sm touch-link">
+                    <h3 class="font-bold text-lg">💊 고함량 마그네슘 & 코엔자임 Q10</h3>
+                    <p class="text-sm text-slate-500 mt-1">뇌혈관 수축 예방 및 신경 이완에 도움을 주는 영양 성분</p>
+                </a>
+                <a href="https://link.coupang.com/a/d5wIIQ" target="_blank" rel="noopener noreferrer" class="block bg-white p-5 rounded-2xl border-2 border-slate-100 shadow-sm touch-link">
+                    <h3 class="font-bold text-lg">🛌 C자 곡선 유지 인체공학 경추 폼 베개</h3>
+                    <p class="text-sm text-slate-500 mt-1">수면 중 목 근육 긴장 완화 및 뇌 산소 공급 보조 베개</p>
+                </a>
+            </div>
+            <a href="search.html" class="block w-full mt-4 py-3.5 bg-slate-800 text-white text-center font-bold rounded-2xl shadow-md hover:bg-slate-700 transition-colors text-sm">
+                + 전체 제품 검색 및 더보기
+            </a>
+        </section>
+
+        <!-- 하단 액션 버튼 -->
+        <div class="space-y-3 mb-6">
+            <a href="check-list.html" class="block w-full py-3.5 bg-slate-100 text-slate-700 font-bold text-center text-sm rounded-2xl hover:bg-slate-200 transition-colors">
+                🔄 다른 증상 자가진단 해보기
+            </a>
+        </div>
+
+        <!-- 주의사항 및 푸터 -->
+        <p class="text-xs text-slate-400 text-center leading-relaxed">
+            ※ 본 글은 일반적인 건강 정보 제공을 목적하며, 갑작스러운 극심한 망치로 맞은 듯한 두통, 언어장애, 마비가 동반될 경우 즉시 119에 연락하거나 응급실을 방문해야 합니다.
+        </p>
+
+    </div>
+
+    <!-- 결과 판정 로직 -->
+    <script>
+        const urlParams = new URLSearchParams(window.location.search);
+        const score = parseInt(urlParams.get('score') || '0');
+
+        const badge = document.getElementById('riskBadge');
+        const title = document.getElementById('resultTitle');
+        const desc = document.getElementById('resultDesc');
+
+        if (score === 0) {
+            badge.className = "inline-block text-xs font-heavy px-3 py-1 rounded-full bg-emerald-100 text-emerald-800 mb-3";
+            badge.innerText = "안심 (위험도 낮음)";
+            title.innerText = "뇌혈관 순환 및 두통 지표가 양호합니다!";
+            desc.innerText = "현재 이상 두통 증상이 없습니다. 수면 위생을 잘 유지하시고 수분 섭취를 습관화해 주세요.";
+        } else if (score === 1) {
+            badge.className = "inline-block text-xs font-heavy px-3 py-1 rounded-full bg-amber-100 text-amber-800 mb-3";
+            badge.innerText = "주의 (긴장성/수면 두통 의심)";
+            title.innerText = "경추 긴장 또는 수면 중 산소 부족 가능성이 있습니다";
+            desc.innerText = "잘못된 수면 자세, 목 근육 경직, 수면 무호흡 등으로 인해 아침 두통이 발생했을 가능성이 높습니다. 베개 높이 조절 및 뒷목 스트레칭을 실천해 보세요.";
+        } else {
+            badge.className = "inline-block text-xs font-heavy px-3 py-1 rounded-full bg-red-100 text-red-800 mb-3";
+            badge.innerText = "경고 (뇌혈관 질환/응급 신호 위험)";
+            title.innerText = "뇌혈관 이상 전조 신호 또는 정밀 검사 필요 상태입니다";
+            desc.innerText = "두통과 함께 신경학적 증상(마비, 어눌함, 구토 등)이 동반되거나 매일 아침 심해지는 두통은 뇌졸중, 뇌압 상승 등 뇌혈관 질환의 위험 신호일 수 있습니다. 지체하지 마시고 신경과 전문의 정밀 검진을 받으시길 권장합니다.";
+        }
+    </script>
+</body>
+</html>

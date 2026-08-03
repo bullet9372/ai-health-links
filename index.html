@@ -7,94 +7,257 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@400;700;800&display=swap');
-        body { font-family: 'Nanum Gothic', sans-serif; background-color: #fafaf9; }
+        body { font-family: 'Nanum Gothic', sans-serif; background-color: #f8fafc; }
         .font-heavy { font-weight: 800; }
-        .touch-link { transition: all 0.1s ease-in-out; }
-        .touch-link:active { transform: scale(0.97); background-color: #f5f5f4; }
-        /* 유튜브 버튼 애니메이션 */
-        @keyframes pulse {
-            0% { transform: scale(1); }
-            50% { transform: scale(1.05); }
-            100% { transform: scale(1); }
-        }
-        .animate-pulse-slow { animation: pulse 2s infinite; }
+        .touch-link { transition: all 0.15s ease-in-out; }
+        .touch-link:active { transform: scale(0.98); background-color: #f1f5f9; }
     </style>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6062349022770025"
+     crossorigin="anonymous"></script>
 </head>
 <body class="text-slate-800 pb-20">
-    <div class="max-w-lg mx-auto px-5">
+    <div class="max-w-lg mx-auto px-4">
         
         <!-- 프로필 & 브랜드 헤더 -->
-        <header class="text-center pt-12 pb-8">
-            <img src="aaaa.png" alt="로고" class="w-32 h-32 mx-auto rounded-full border-4 border-white shadow-md mb-4 object-cover">
-            <h1 class="text-3xl font-heavy text-slate-900 mb-2">AI 건강검증단</h1>
-            <p class="text-lg font-bold text-blue-800 mb-8">"정성껏 검증한 건강 정보와 제품"</p>
+        <header class="text-center pt-8 pb-5">
+            <img src="aaaa.png" alt="AI 건강검증단 로고" class="w-24 h-24 mx-auto rounded-full border-4 border-white shadow-md mb-3 object-cover">
+            <h1 class="text-2xl sm:text-3xl font-heavy text-slate-900 mb-1">AI 건강검증단</h1>
+            <p class="text-sm sm:text-base font-bold text-blue-800 mb-5">"팩트 기반 1분 건강 가이드 & 자가진단"</p>
             
-            <!-- SNS 연결 버튼 -->
-            <div class="flex flex-col sm:flex-row items-center justify-center gap-3 px-2">
+            <div class="flex items-center justify-center gap-2">
                 <a href="https://www.youtube.com/@AI_HealthCheck?sub_confirmation=1" target="_blank" rel="noopener noreferrer"
-                   class="w-full sm:w-auto inline-flex items-center justify-center bg-[#FF0000] text-white px-6 py-3 rounded-full font-bold shadow-lg hover:bg-[#CC0000] transition-all active:scale-95 animate-pulse-slow">
-                    <span class="mr-2 text-xl">▶</span> YouTube 구독
+                   class="flex-1 inline-flex items-center justify-center bg-[#FF0000] text-white px-3 py-2.5 rounded-2xl font-bold shadow-sm hover:bg-[#CC0000] transition-all text-xs sm:text-sm">
+                    <span class="mr-1.5 text-base">▶</span> 유튜브
                 </a>
-
                 <a href="https://www.tiktok.com/@ai_healthcheck?is_from_webapp=1&sender_device=pc" target="_blank" rel="noopener noreferrer"
-                   class="w-full sm:w-auto inline-flex items-center justify-center bg-[#000000] text-white px-6 py-3 rounded-full font-bold shadow-lg hover:bg-[#333333] transition-all active:scale-95">
-                    <svg class="w-5 h-5 mr-2 fill-white" viewBox="0 0 448 512" xmlns="http://www.w3.org/2000/svg">
+                   class="flex-1 inline-flex items-center justify-center bg-[#000000] text-white px-3 py-2.5 rounded-2xl font-bold shadow-sm hover:bg-[#222222] transition-all text-xs sm:text-sm">
+                    <svg class="w-3.5 h-3.5 mr-1.5 fill-white" viewBox="0 0 448 512" xmlns="http://www.w3.org/2000/svg">
                         <path d="M448,209.91a210.06,210.06,0,0,1-122.77-39.25V349.38A145.11,145.11,0,1,1,180.31,204.28a143.43,143.43,0,0,1,34.4,4.22V118.11c-11.33-1.46-22.9-2.22-34.71-2.22A231.67,231.67,0,1,0,411.69,347.55V148.82A280.08,280.08,0,0,0,448,157.11V209.91Z"/>
                     </svg>
-                    TikTok 팔로우
+                    틱톡
+                </a>
+                <a href="https://blog.naver.com/aihealthcheck" target="_blank" rel="noopener noreferrer"
+                   class="flex-1 inline-flex items-center justify-center bg-[#03CF5D] text-white px-3 py-2.5 rounded-2xl font-bold shadow-sm hover:bg-[#02b350] transition-all text-xs sm:text-sm">
+                    블로그
                 </a>
             </div>
         </header>
 
-        <!-- 최신 건강 정보 섹션 -->
-        <section class="mb-12">
-            <h2 class="text-2xl font-heavy mb-4 px-1">📝 최신 건강 정보</h2>
-            <div class="space-y-3">
-                <a href="post1.html" class="block bg-white p-5 rounded-2xl border-2 border-slate-100 shadow-sm touch-link">
-                    <span class="text-xs font-bold text-red-500 bg-red-50 px-2 py-1 rounded">팩트체크</span>
-                    <h3 class="text-lg font-bold mt-2">치매 위험 높이는 수면 습관</h3>
-                    <p class="text-sm text-slate-500 mt-1">뇌 노폐물 제거 시스템의 비밀</p>
-                </a>
-                <a href="post2.html" class="block bg-white p-5 rounded-2xl border-2 border-slate-100 shadow-sm touch-link">
-                    <span class="text-xs font-bold text-blue-500 bg-blue-50 px-2 py-1 rounded">식단관리</span>
-                    <h3 class="text-lg font-bold mt-2">당뇨 환자의 아침 과일주스</h3>
-                    <p class="text-sm text-slate-500 mt-1">혈당 스파이크를 방지하는 법</p>
+        <!-- 핵심 퍼널: 자가진단 섹션 -->
+        <section class="mb-8">
+            <div class="bg-gradient-to-br from-blue-900 via-indigo-900 to-slate-900 text-white p-6 rounded-3xl shadow-xl">
+                <div class="flex items-center justify-between mb-3">
+                    <span class="bg-yellow-400 text-slate-900 font-extrabold text-xs px-3 py-1 rounded-full">
+                        ⚡ 1분 자가진단
+                    </span>
+                    <span class="text-xs text-blue-200">무료 위험도 체크</span>
+                </div>
+                
+                <h2 class="text-xl sm:text-2xl font-heavy mb-2 leading-snug">
+                    아침마다 찌릿하고 뻐근하다면?<br>내 몸 상태 1분 점검
+                </h2>
+                <p class="text-xs sm:text-sm text-blue-100 mb-5 leading-relaxed">
+                    간단한 무료 건강체크로 나의 위험도 수치와 1분 해결 루틴을 확인하세요.
+                    어떠한 개인정보도 남기지 않으니 안심하고 늦기전에 지금 확인해보세요!
+                </p>
+
+                <div class="space-y-2.5">
+                    <a href="check-neck.html" class="flex items-center justify-between bg-white/95 text-slate-800 p-3.5 rounded-2xl font-bold shadow hover:bg-white transition-colors">
+                        <div class="flex items-center space-x-3">
+                            <span class="text-2xl">🧘</span>
+                            <div>
+                                <div class="flex items-center space-x-1.5">
+                                    <span class="text-xs text-red-500 font-extrabold">[NEW]</span>
+                                    <span class="text-sm sm:text-base text-slate-900">목 담 & 경추 자가진단</span>
+                                </div>
+                                <div class="text-xs text-slate-500 font-normal">자고 일어났는데 목이 안 돌아갈 때</div>
+                            </div>
+                        </div>
+                        <span class="text-blue-600 font-heavy text-xs sm:text-sm">진단 &gt;</span>
+                    </a>
+
+                    <a href="check-sleep.html" class="flex items-center justify-between bg-white/95 text-slate-800 p-3.5 rounded-2xl font-bold shadow hover:bg-white transition-colors">
+                        <div class="flex items-center space-x-3">
+                            <span class="text-2xl">🌙</span>
+                            <div>
+                                <span class="text-sm sm:text-base text-slate-900">수면 장애 & 야간뇨 자가진단</span>
+                                <div class="text-xs text-slate-500 font-normal">자다 깨서 소변보거나 잠들기 힘들 때</div>
+                            </div>
+                        </div>
+                        <span class="text-blue-600 font-heavy text-xs sm:text-sm">진단 &gt;</span>
+                    </a>
+                </div>
+
+                <a href="check-list.html" class="block w-full mt-4 py-3 bg-white/10 hover:bg-white/20 text-white text-center font-bold rounded-2xl border border-white/20 text-xs sm:text-sm transition-colors">
+                    🔍 전체 자가진단 목록 보기 (허리·손목 등)
                 </a>
             </div>
-            <a href="info.html" class="block w-full mt-4 py-3 bg-white text-slate-500 text-center font-bold rounded-2xl border-2 border-dashed border-slate-200 text-sm hover:bg-slate-50 transition-colors">
-                + 더 많은 건강 정보 읽기
+        </section>
+
+        <!-- 카테고리별 아티클 (각 3개씩 노출) -->
+        <section class="mb-10">
+            <div class="flex items-center justify-between mb-4 px-1">
+                <h2 class="text-xl font-heavy text-slate-900">📚 팩트검증 건강 아티클</h2>
+                <a href="articles.html" class="text-xs font-bold text-blue-600 hover:underline">전체보기 (21개) &gt;</a>
+            </div>
+
+            <div class="space-y-4">
+                
+                <!-- 💊 [1] 영양제 & 식습관 -->
+                <div class="bg-white p-4 rounded-2xl border border-slate-200/80 shadow-sm">
+                    <div class="text-xs font-bold text-blue-600 bg-blue-50 px-2.5 py-1 rounded-md inline-block mb-2">💊 영양제 & 식습관</div>
+                    <ul class="divide-y divide-slate-100 text-sm font-bold text-slate-800">
+                        <li>
+                            <a href="01_영양제_복용시간표.html" class="py-2.5 flex items-center justify-between hover:text-blue-600 transition-colors">
+                                <span>01. 영양제 올바른 복용 시간표 & 콩팥 보호</span>
+                                <span class="text-slate-400 text-xs font-normal">보기 &gt;</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="02_혈당스파이크_거꾸로식사법.html" class="py-2.5 flex items-center justify-between hover:text-blue-600 transition-colors">
+                                <span>02. 혈당 스파이크 잡는 거꾸로 식사법</span>
+                                <span class="text-slate-400 text-xs font-normal">생성예정</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="08_역류성식도염_예방수칙.html" class="py-2.5 flex items-center justify-between hover:text-blue-600 transition-colors">
+                                <span>08. 역류성 식도염 & 속쓰림 예방 수칙</span>
+                                <span class="text-slate-400 text-xs font-normal">생성예정</span>
+                            </a>
+                        </li>
+                    </ul>
+                    <a href="articles.html?cat=nutrition" class="block text-center text-xs font-bold text-slate-500 pt-3 border-t border-slate-100 hover:text-blue-600">
+                        + 더보기
+                    </a>
+                </div>
+
+                <!-- 🦴 [2] 관절 & 통증 케어 -->
+                <div class="bg-white p-4 rounded-2xl border border-slate-200/80 shadow-sm">
+                    <div class="text-xs font-bold text-orange-600 bg-orange-50 px-2.5 py-1 rounded-md inline-block mb-2">🦴 관절 & 통증 케어</div>
+                    <ul class="divide-y divide-slate-100 text-sm font-bold text-slate-800">
+                        <li>
+                            <a href="03_아침_관절_뻣뻣함_해결.html" class="py-2.5 flex items-center justify-between hover:text-orange-600 transition-colors">
+                                <span>03. 아침 관절 뻣뻣함 3분 침대 시동 루틴</span>
+                                <span class="text-slate-400 text-xs font-normal">생성예정</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="07_오십견_어깨통증_스트레칭.html" class="py-2.5 flex items-center justify-between hover:text-orange-600 transition-colors">
+                                <span>07. 오십견 어깨 통증 완화 시계추 운동</span>
+                                <span class="text-slate-400 text-xs font-normal">생성예정</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="09_족저근막염_발바닥스트레칭.html" class="py-2.5 flex items-center justify-between hover:text-orange-600 transition-colors">
+                                <span>09. 아침 첫발 뒤꿈치 찌릿! 족저근막염 루틴</span>
+                                <span class="text-slate-400 text-xs font-normal">생성예정</span>
+                            </a>
+                        </li>
+                    </ul>
+                    <a href="articles.html?cat=joint" class="block text-center text-xs font-bold text-slate-500 pt-3 border-t border-slate-100 hover:text-orange-600">
+                        + 더보기
+                    </a>
+                </div>
+
+                <!-- 🌙 [3] 수면 & 야간 질환 -->
+                <div class="bg-white p-4 rounded-2xl border border-slate-200/80 shadow-sm">
+                    <div class="text-xs font-bold text-indigo-600 bg-indigo-50 px-2.5 py-1 rounded-md inline-block mb-2">🌙 수면 & 야간 질환</div>
+                    <ul class="divide-y divide-slate-100 text-sm font-bold text-slate-800">
+                        <li>
+                            <a href="05_야간뇨_예방_루틴.html" class="py-2.5 flex items-center justify-between hover:text-indigo-600 transition-colors">
+                                <span>05. 자다 깨서 소변보는 야간뇨 예방 루틴</span>
+                                <span class="text-slate-400 text-xs font-normal">생성예정</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="06_야간_다리쥐_스트레칭.html" class="py-2.5 flex items-center justify-between hover:text-indigo-600 transition-colors">
+                                <span>06. 자다가 다리 쥐(경련) 날 때 1분 대처법</span>
+                                <span class="text-slate-400 text-xs font-normal">생성예정</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="11_수면의질_5분_꿀잠루틴.html" class="py-2.5 flex items-center justify-between hover:text-indigo-600 transition-colors">
+                                <span>11. 불면증 덜어주는 5분 꿀잠 4-7-8 호흡법</span>
+                                <span class="text-slate-400 text-xs font-normal">생성예정</span>
+                            </a>
+                        </li>
+                    </ul>
+                    <a href="articles.html?cat=sleep" class="block text-center text-xs font-bold text-slate-500 pt-3 border-t border-slate-100 hover:text-indigo-600">
+                        + 더보기
+                    </a>
+                </div>
+
+                <!-- 🩸 [4] 혈관, 눈 & 간 건강 -->
+                <div class="bg-white p-4 rounded-2xl border border-slate-200/80 shadow-sm">
+                    <div class="text-xs font-bold text-emerald-600 bg-emerald-50 px-2.5 py-1 rounded-md inline-block mb-2">🩸 혈관 / 눈 / 간 건강</div>
+                    <ul class="divide-y divide-slate-100 text-sm font-bold text-slate-800">
+                        <li>
+                            <a href="04_간건강_경고신호.html" class="py-2.5 flex items-center justify-between hover:text-emerald-600 transition-colors">
+                                <span>04. 만성피로 & 눈 침침함 간 경고신호 5가지</span>
+                                <span class="text-slate-400 text-xs font-normal">생성예정</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="13_혈액순환_24시간_타임라인.html" class="py-2.5 flex items-center justify-between hover:text-emerald-600 transition-colors">
+                                <span>13. 24시간 혈액순환 종아리 펌프 루틴</span>
+                                <span class="text-slate-400 text-xs font-normal">생성예정</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="15_안구건조증_온찜질_루틴.html" class="py-2.5 flex items-center justify-between hover:text-emerald-600 transition-colors">
+                                <span>15. 안구건조증 기름샘 녹이는 5분 온찜질</span>
+                                <span class="text-slate-400 text-xs font-normal">생성예정</span>
+                            </a>
+                        </li>
+                    </ul>
+                    <a href="articles.html?cat=organ" class="block text-center text-xs font-bold text-slate-500 pt-3 border-t border-slate-100 hover:text-emerald-600">
+                        + 더보기
+                    </a>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- 추천 검증 제품 섹션 (2개 노출 + 제품 더보기) -->
+        <section class="mb-10">
+            <h2 class="text-xl font-heavy mb-4 px-1 text-slate-900">🛍️ 검증단 추천 건강 제품</h2>
+            <div class="grid grid-cols-2 gap-3 mb-3">
+                <a href="https://link.coupang.com/a/d6YYP2" target="_blank" rel="noopener noreferrer" class="block bg-white p-4 rounded-2xl border border-slate-200 shadow-sm touch-link">
+                    <span class="text-2xl">🩸</span>
+                    <h3 class="font-bold text-sm text-slate-900 mt-2">자가 혈당측정기</h3>
+                    <p class="text-xs text-slate-500 mt-1">식후 혈당 정밀 체크</p>
+                </a>
+                <a href="https://link.coupang.com/a/d5wIIQ" target="_blank" rel="noopener noreferrer" class="block bg-white p-4 rounded-2xl border border-slate-200 shadow-sm touch-link">
+                    <span class="text-2xl">🧠</span>
+                    <h3 class="font-bold text-sm text-slate-900 mt-2">포스파티딜세린</h3>
+                    <p class="text-xs text-slate-500 mt-1">기억력 집중 케어</p>
+                </a>
+            </div>
+
+            <!-- 제품 더보기 버튼 -->
+            <a href="search.html" class="block w-full py-3 bg-slate-800 text-white text-center font-bold rounded-2xl text-xs sm:text-sm hover:bg-slate-700 transition-colors shadow-sm">
+                + 추천 건강 제품 더보기
             </a>
         </section>
 
-        <!-- 추천 인기 제품 섹션 -->
-        <section class="mb-12">
-            <h2 class="text-2xl font-heavy mb-4 px-1">🛍️ 추천 인기 제품</h2>
-            <div class="space-y-3">
-                <a href="https://link.coupang.com/a/d6YYP2" target="_blank" rel="noopener noreferrer" class="block bg-white p-5 rounded-2xl border-2 border-slate-100 shadow-sm touch-link">
-                    <h3 class="font-bold text-lg">🩸 자가 혈당 측정기 세트</h3>
-                    <p class="text-sm text-slate-500 mt-1">집에서 편하게 관리하는 식후 혈당</p>
-                </a>
-                <a href="https://link.coupang.com/a/d5wIIQ" target="_blank" rel="noopener noreferrer" class="block bg-white p-5 rounded-2xl border-2 border-slate-100 shadow-sm touch-link">
-                    <h3 class="font-bold text-lg">🧠 고함량 포스파티딜세린</h3>
-                    <p class="text-sm text-slate-500 mt-1">기억력이 걱정될 때 꼭 필요한 영양제</p>
-                </a>
-            </div>
-            <a href="search.html" class="block w-full mt-6 py-4 bg-slate-800 text-white text-center font-bold rounded-2xl shadow-lg hover:bg-slate-700 transition-colors">
-                + 전체 제품 검색 및 더보기
-            </a>
-        </section>
-
-        <!-- 하단 푸터 -->
-        <footer class="text-center py-10 border-t border-slate-200">
-            <p class="text-xs text-slate-400 leading-relaxed mb-6 px-4">
-                이 포스팅은 쿠팡 파트너스 활동의 일환으로,<br>이에 따른 일정액의 수수료를 제공받습니다.
+<!-- 하단 푸터 -->
+        <footer class="text-center py-8 border-t border-slate-200">
+            <p class="text-xs text-slate-400 leading-relaxed mb-5 px-2">
+                본 사이트의 콘텐츠는 정보 제공 목적으로 작성되었으며 의학적 진단을 대신할 수 없습니다.<br>
+                쿠팡 파트너스 활동의 일환으로 일정액의 수수료를 제공받을 수 있습니다.
             </p>
             
-            <p class="text-xs text-slate-400 font-bold uppercase tracking-widest mb-4">Real-time Visitors</p>
-            <div class="flex flex-col items-center justify-center space-y-2">
+            <div class="flex flex-col items-center justify-center space-y-2 mb-3">
                 <img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fai-health-links.vercel.app&count_bg=%231E3A8A&title_bg=%23E11D48&icon=&icon_color=%23E7E7E7&title=Today+%2F+Total&edge_flat=false" alt="방문자수"/>
             </div>
-            <p class="text-xs text-slate-300 mt-6 uppercase tracking-tight">© AI HEALTH CHECK VERIFICATION</p>
+
+            <div class="mb-1">
+                <p class="text-xs text-slate-500">
+                    협업 및 제휴 문의 : <a href="mailto:bullet9372@gmail.com" class="font-bold text-slate-700 hover:underline">bullet9372@gmail.com</a>
+                </p>
+            </div>
+
+            <p class="text-[10px] text-slate-300 mt-4 uppercase tracking-wider">© AI HEALTH CHECK VERIFICATION</p>
         </footer>
     </div>
 </body>

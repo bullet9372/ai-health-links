@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>목/경추 진단 결과 - AI 건강검증단</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@400;700;800&display=swap');
+        body { font-family: 'Nanum Gothic', sans-serif; background-color: #fafaf9; }
+        .font-heavy { font-weight: 800; }
+        .touch-link { transition: all 0.1s ease-in-out; }
+        .touch-link:active { transform: scale(0.97); background-color: #f5f5f4; }
+    </style>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6062349022770025"
+     crossorigin="anonymous"></script>
+</head>
+<body class="text-slate-800 pb-20">
+    <div class="max-w-lg mx-auto px-5 pt-8">
+        
+        <!-- 헤더 -->
+        <div class="flex items-center justify-between mb-6 border-b pb-4">
+            <a href="index.html" class="text-slate-500 font-bold text-sm">← 메인으로 돌아가기</a>
+            <span class="text-xs font-bold bg-blue-100 text-blue-800 px-3 py-1 rounded-full">🧘 목/경추 진단 결과</span>
+        </div>
+
+        <!-- 진단 결과 카드 -->
+        <div id="resultCard" class="bg-white p-6 rounded-3xl border-2 border-slate-100 shadow-md mb-6 text-center">
+            <span id="riskBadge" class="inline-block text-xs font-heavy px-3 py-1 rounded-full mb-3">분석 중...</span>
+            <h1 id="resultTitle" class="text-2xl font-heavy text-slate-900 mb-2">진단 결과를 불러오는 중입니다</h1>
+            <p id="resultDesc" class="text-sm text-slate-600 leading-relaxed"></p>
+        </div>
+
+        <!-- 목/경추 전용 1분 안전 해결 루틴 -->
+        <div class="space-y-4 mb-8">
+            <h2 class="text-xl font-heavy text-slate-900 px-1">💡 침대에서 딱 1분! 안전 해결 루틴</h2>
+
+            <div class="bg-white p-5 rounded-2xl border-2 border-slate-100 shadow-sm space-y-2">
+                <div class="flex items-center justify-between">
+                    <span class="text-sm font-heavy text-blue-600">루틴 01</span>
+                    <span class="text-xs bg-slate-100 text-slate-600 px-2 py-0.5 rounded font-bold">10초 유지 (양쪽 3회)</span>
+                </div>
+                <h3 class="font-bold text-slate-900 text-base">어깨 내리고 고개 옆으로 숙이기</h3>
+                <div class="text-xs bg-red-50 text-red-600 p-2.5 rounded-xl font-bold">
+                    ❌ 위험 행동: 목이 안 돌아간다고 둑 소리가 나도록 억지로 비틀거나 꺾는 행동입니다.
+                </div>
+                <p class="text-sm text-slate-700 leading-relaxed">
+                    <strong class="text-blue-700">✅ 바로 할 수 있는 해결책:</strong><br>
+                    어깨를 아래로 끌어내린 상태에서 고개를 반대쪽 옆으로 지그시 숙여 10초간 유지하세요.
+                </p>
+                <p class="text-xs text-slate-500 bg-slate-50 p-2.5 rounded-xl mt-1">
+                    💡 <strong>왜 그럴까요?</strong><br>
+                    수면 중 단단히 뭉쳐 있던 목 옆 근육(승모근·견갑거근)을 안전하게 늘려주어 통증을 완화해 줍니다.
+                </p>
+            </div>
+
+            <div class="bg-white p-5 rounded-2xl border-2 border-slate-100 shadow-sm space-y-2">
+                <div class="flex items-center justify-between">
+                    <span class="text-sm font-heavy text-blue-600">루틴 02</span>
+                    <span class="text-xs bg-slate-100 text-slate-600 px-2 py-0.5 rounded font-bold">5초 버티기 (5회 반복)</span>
+                </div>
+                <h3 class="font-bold text-slate-900 text-base">목뼈 아치 살리는 '턱 당기기' (이중 턱 만들기)</h3>
+                <div class="text-xs bg-red-50 text-red-600 p-2.5 rounded-xl font-bold">
+                    ❌ 위험 행동: 뻣뻣해진 목을 앞으로 푹 숙이거나 턱을 앞으로 빼는 행동입니다.
+                </div>
+                <p class="text-sm text-slate-700 leading-relaxed">
+                    <strong class="text-blue-700">✅ 바로 할 수 있는 해결책:</strong><br>
+                    손가락으로 턱 끝을 뒤로 바짝 밀어 넣어 '투턱'을 만드는 느낌으로 5초간 버티세요.
+                </p>
+                <p class="text-xs text-slate-500 bg-slate-50 p-2.5 rounded-xl mt-1">
+                    💡 <strong>왜 그럴까요?</strong><br>
+                    일자로 펴지고 굳어 있던 경추 관절의 올바른 C자 곡선을 되찾아주어 목 신경의 압박을 줄여줍니다.
+                </p>
+            </div>
+
+            <div class="bg-white p-5 rounded-2xl border-2 border-slate-100 shadow-sm space-y-2">
+                <div class="flex items-center justify-between">
+                    <span class="text-sm font-heavy text-blue-600">루틴 03</span>
+                    <span class="text-xs bg-slate-100 text-slate-600 px-2 py-0.5 rounded font-bold">수면 습관</span>
+                </div>
+                <h3 class="font-bold text-slate-900 text-base">잘 때 '목 아치를 받쳐주는 높이의 베개' 사용하기</h3>
+                <div class="text-xs bg-red-50 text-red-600 p-2.5 rounded-xl font-bold">
+                    ❌ 위험 행동: 너무 높은 베개를 베어 자는 동안 목이 꺾인 상태를 유지하는 습관입니다.
+                </div>
+                <p class="text-sm text-slate-700 leading-relaxed">
+                    <strong class="text-blue-700">✅ 바로 할 수 있는 해결책:</strong><br>
+                    등과 목이 일직선이 되도록 목 밑 아치를 완만하게 받쳐주는 적당한 높이의 베개를 사용하세요.
+                </p>
+                <p class="text-xs text-slate-500 bg-slate-50 p-2.5 rounded-xl mt-1">
+                    💡 <strong>왜 그럴까요?</strong><br>
+                    밤새 목 근육에 가해지는 긴장을 줄여주어 아침 기상 시 목 담 걸림을 미리 예방해 줍니다.
+                </p>
+            </div>
+
+            <!-- 👣 아침 목 통증 완화 1분 루틴 요약 -->
+            <div class="bg-gradient-to-r from-blue-50 to-indigo-50 border-2 border-blue-100 p-5 rounded-2xl">
+                <h3 class="font-heavy text-slate-900 text-base mb-2">👣 아침 목 통증 완화 1분 루틴 요약</h3>
+                <p class="text-xs text-slate-600 mb-3">매일 아침 침대에서 이것만 기억하세요!</p>
+                <ul class="text-sm text-slate-800 space-y-2 font-bold">
+                    <li class="flex items-start"><span class="text-blue-600 mr-2">•</span> [목 옆 늘리기] 억지로 꺾지 말고 어깨 내린 채 고개 옆으로 10초 숙이기</li>
+                    <li class="flex items-start"><span class="text-blue-600 mr-2">•</span> [턱 당기기] 손가락으로 턱을 뒤로 밀어 5초간 버티기 (5회)</li>
+                    <li class="flex items-start"><span class="text-blue-600 mr-2">•</span> [적정 베개] 목뼈 아치를 자연스럽게 받쳐주는 베개 사용하기</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- 추천 인기 제품 섹션 -->
+        <section class="mb-8">
+            <h2 class="text-xl font-heavy mb-4 px-1">🛍️ 추천 인기 제품</h2>
+            <div class="space-y-3">
+                <a href="https://link.coupang.com/a/d6YYP2" target="_blank" rel="noopener noreferrer" class="block bg-white p-5 rounded-2xl border-2 border-slate-100 shadow-sm touch-link">
+                    <h3 class="font-bold text-lg">🩸 자가 혈당 측정기 세트</h3>
+                    <p class="text-sm text-slate-500 mt-1">집에서 편하게 관리하는 식후 혈당</p>
+                </a>
+                <a href="https://link.coupang.com/a/d5wIIQ" target="_blank" rel="noopener noreferrer" class="block bg-white p-5 rounded-2xl border-2 border-slate-100 shadow-sm touch-link">
+                    <h3 class="font-bold text-lg">🧠 고함량 포스파티딜세린</h3>
+                    <p class="text-sm text-slate-500 mt-1">기억력이 걱정될 때 꼭 필요한 영양제</p>
+                </a>
+            </div>
+            <a href="search.html" class="block w-full mt-4 py-3.5 bg-slate-800 text-white text-center font-bold rounded-2xl shadow-md hover:bg-slate-700 transition-colors text-sm">
+                + 전체 제품 검색 및 더보기
+            </a>
+        </section>
+
+        <!-- 하단 액션 버튼 -->
+        <div class="space-y-3 mb-6">
+            <a href="https://blog.naver.com/aihealthcheck/224365986356" target="_blank" rel="noopener noreferrer" class="block w-full py-4 bg-emerald-600 text-white font-heavy text-center text-base rounded-2xl shadow-lg hover:bg-emerald-700 transition-colors">
+                📖 관련 네이버 블로그 원본글 읽기
+            </a>
+            <a href="check-list.html" class="block w-full py-3.5 bg-slate-100 text-slate-700 font-bold text-center text-sm rounded-2xl hover:bg-slate-200 transition-colors">
+                🔄 다른 증상 자가진단 해보기
+            </a>
+        </div>
+
+        <!-- 주의사항 및 푸터 -->
+        <p class="text-xs text-slate-400 text-center leading-relaxed">
+            ※ 본 글은 일반적인 건강 정보 제공을 목적하며, 지속적인 목 통증이나 팔 저림이 동반되는 경우 전문의의 진료를 받으셔야 합니다.
+        </p>
+
+    </div>
+
+    <!-- 결과 판정 로직 -->
+    <script>
+        const urlParams = new URLSearchParams(window.location.search);
+        const score = parseInt(urlParams.get('score') || '0');
+
+        const badge = document.getElementById('riskBadge');
+        const title = document.getElementById('resultTitle');
+        const desc = document.getElementById('resultDesc');
+
+        if (score === 0) {
+            badge.className = "inline-block text-xs font-heavy px-3 py-1 rounded-full bg-emerald-100 text-emerald-800 mb-3";
+            badge.innerText = "안심 (위험도 낮음)";
+            title.innerText = "목 근육 및 경추 상태가 양호합니다!";
+            desc.innerText = "현재 큰 문제는 없어 보이지만, 자고 일어났을 때 목에 무리가 가지 않도록 올바른 베개 높이를 유지하고 아침 스트레칭을 꾸준히 해주세요.";
+        } else if (score === 1 || score === 2) {
+            badge.className = "inline-block text-xs font-heavy px-3 py-1 rounded-full bg-amber-100 text-amber-800 mb-3";
+            badge.innerText = "주의 (주의 필요)";
+            title.innerText = "수면 중 경추와 목 근육에 부담이 가고 있습니다";
+            desc.innerText = "베개 높이가 맞지 않거나 자는 동안 체온이 떨어져 목 주변 승모근과 경추 관절이 굳어있을 가능성이 높습니다. 아래 1분 스트레칭 루틴을 바로 실천해 보세요.";
+        } else {
+            badge.className = "inline-block text-xs font-heavy px-3 py-1 rounded-full bg-red-100 text-red-800 mb-3";
+            badge.innerText = "경고 (위험도 높음)";
+            title.innerText = "경추 관절 긴장 및 신경 압박 가능성이 높습니다";
+            desc.innerText = "아침 목 뻐근함과 함께 팔 저림이나 지속적인 담 걸림이 자주 발생하는 상태입니다. 억지로 목을 꺾지 마시고 아래 안전 루틴을 실시한 후 지속 시 병원 진료를 권장합니다.";
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>혈액순환 & 손발 저림 1분 자가진단 - AI 건강검증단</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@400;700;800&display=swap');
+        body { font-family: 'Nanum Gothic', sans-serif; background-color: #fafaf9; }
+        .font-heavy { font-weight: 800; }
+    </style>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6062349022770025"
+     crossorigin="anonymous"></script>
+</head>
+<body class="text-slate-800 pb-20">
+    <div class="max-w-lg mx-auto px-5 pt-8">
+        <!-- 상단 헤더 -->
+        <div class="flex items-center justify-between mb-6 border-b pb-4">
+            <a href="index.html" class="text-slate-500 font-bold text-sm">← 메인으로 돌아가기</a>
+            <span class="text-xs font-bold bg-indigo-100 text-indigo-800 px-3 py-1 rounded-full">1분 자가진단</span>
+        </div>
+
+        <div class="mb-6">
+            <h1 class="text-2xl font-heavy text-slate-900 leading-snug">🩸 혈액순환 & 손발 저림<br>1분 자가진단</h1>
+            <p class="text-sm text-slate-500 mt-2">아침 기상 시 손발의 차가움, 부종 및 저림 증상을 체크해 보세요.</p>
+        </div>
+
+        <!-- 질문 폼 -->
+        <form id="checkForm" class="space-y-6">
+            <!-- 질문 1 -->
+            <div class="bg-white p-5 rounded-2xl border-2 border-slate-100 shadow-sm">
+                <p class="font-bold text-base text-slate-900 mb-3">Q1. 아침에 잠에서 깰 때 손가락이나 발가락이 유독 얼음장처럼 차갑고 시린가요?</p>
+                <div class="grid grid-cols-2 gap-3">
+                    <label class="flex items-center justify-center p-3 border-2 border-slate-200 rounded-xl font-bold text-slate-700 cursor-pointer has-[:checked]:border-indigo-600 has-[:checked]:bg-indigo-50 has-[:checked]:text-indigo-700">
+                        <input type="radio" name="q1" value="1" class="hidden" required> 예
+                    </label>
+                    <label class="flex items-center justify-center p-3 border-2 border-slate-200 rounded-xl font-bold text-slate-700 cursor-pointer has-[:checked]:border-indigo-600 has-[:checked]:bg-indigo-50 has-[:checked]:text-indigo-700">
+                        <input type="radio" name="q1" value="0" class="hidden"> 아니오
+                    </label>
+                </div>
+            </div>
+
+            <!-- 질문 2 -->
+            <div class="bg-white p-5 rounded-2xl border-2 border-slate-100 shadow-sm">
+                <p class="font-bold text-base text-slate-900 mb-3">Q2. 아침에 일어났을 때 손이 퉁퉁 붓거나 반지가 잘 안 들어가고, 손발 저림이 느껴지나요?</p>
+                <div class="grid grid-cols-2 gap-3">
+                    <label class="flex items-center justify-center p-3 border-2 border-slate-200 rounded-xl font-bold text-slate-700 cursor-pointer has-[:checked]:border-indigo-600 has-[:checked]:bg-indigo-50 has-[:checked]:text-indigo-700">
+                        <input type="radio" name="q2" value="1" class="hidden" required> 예
+                    </label>
+                    <label class="flex items-center justify-center p-3 border-2 border-slate-200 rounded-xl font-bold text-slate-700 cursor-pointer has-[:checked]:border-indigo-600 has-[:checked]:bg-indigo-50 has-[:checked]:text-indigo-700">
+                        <input type="radio" name="q2" value="0" class="hidden"> 아니오
+                    </label>
+                </div>
+            </div>
+
+            <!-- 질문 3 -->
+            <div class="bg-white p-5 rounded-2xl border-2 border-slate-100 shadow-sm">
+                <p class="font-bold text-base text-slate-900 mb-3">Q3. 자다가 혹은 아침에 기지개를 켤 때 종이나 발바닥에 자주 쥐가 나고 근육이 뭉치나요?</p>
+                <div class="grid grid-cols-2 gap-3">
+                    <label class="flex items-center justify-center p-3 border-2 border-slate-200 rounded-xl font-bold text-slate-700 cursor-pointer has-[:checked]:border-indigo-600 has-[:checked]:bg-indigo-50 has-[:checked]:text-indigo-700">
+                        <input type="radio" name="q3" value="1" class="hidden" required> 예
+                    </label>
+                    <label class="flex items-center justify-center p-3 border-2 border-slate-200 rounded-xl font-bold text-slate-700 cursor-pointer has-[:checked]:border-indigo-600 has-[:checked]:bg-indigo-50 has-[:checked]:text-indigo-700">
+                        <input type="radio" name="q3" value="0" class="hidden"> 아니오
+                    </label>
+                </div>
+            </div>
+
+            <button type="button" onclick="submitCheck()" class="w-full py-4 bg-indigo-600 text-white font-heavy text-lg rounded-2xl shadow-lg hover:bg-indigo-700 transition-colors mt-6">
+                진단 결과 확인하기
+            </button>
+        </form>
+    </div>
+
+    <script>
+        function submitCheck() {
+            const form = document.getElementById('checkForm');
+            const q1 = form.querySelector('input[name="q1"]:checked');
+            const q2 = form.querySelector('input[name="q2"]:checked');
+            const q3 = form.querySelector('input[name="q3"]:checked');
+
+            if (!q1 || !q2 || !q3) {
+                alert('모든 항목에 답변해주세요!');
+                return;
+            }
+
+            const totalScore = parseInt(q1.value) + parseInt(q2.value) + parseInt(q3.value);
+            window.location.href = `result-circulation.html?type=circulation&score=${totalScore}`;
+        }
+    </script>
+</body>
+</html>

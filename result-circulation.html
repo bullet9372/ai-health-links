@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>혈액순환 & 손발 저림 진단 결과 - AI 건강검증단</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@400;700;800&display=swap');
+        body { font-family: 'Nanum Gothic', sans-serif; background-color: #fafaf9; }
+        .font-heavy { font-weight: 800; }
+        .touch-link { transition: all 0.15s ease-in-out; }
+        .touch-link:active { transform: scale(0.98); }
+    </style>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6062349022770025"
+     crossorigin="anonymous"></script>
+</head>
+<body class="text-slate-800 pb-20">
+    <div class="max-w-lg mx-auto px-5 pt-8">
+        
+        <!-- 헤더 -->
+        <div class="flex items-center justify-between mb-6 border-b pb-4">
+            <a href="index.html" class="text-slate-500 font-bold text-sm">← 메인으로 돌아가기</a>
+            <span class="text-xs font-bold bg-indigo-100 text-indigo-800 px-3 py-1 rounded-full">🩸 혈액순환 진단 결과</span>
+        </div>
+
+        <!-- 진단 결과 카드 -->
+        <div id="resultCard" class="bg-white p-6 rounded-3xl border-2 border-slate-100 shadow-md mb-6 text-center">
+            <span id="riskBadge" class="inline-block text-xs font-heavy px-3 py-1 rounded-full mb-3">분석 중...</span>
+            <h1 id="resultTitle" class="text-2xl font-heavy text-slate-900 mb-2">진단 결과를 불러오는 중입니다</h1>
+            <p id="resultDesc" class="text-sm text-slate-600 leading-relaxed"></p>
+        </div>
+
+        <!-- 혈액순환 개선 전용 1분 케어 루틴 -->
+        <div class="space-y-4 mb-8">
+            <h2 class="text-xl font-heavy text-slate-900 px-1">💡 말초 혈류를 깨우는 1분 케어 루틴</h2>
+
+            <div class="bg-white p-5 rounded-2xl border-2 border-slate-100 shadow-sm space-y-2">
+                <div class="flex items-center justify-between">
+                    <span class="text-sm font-heavy text-indigo-600">루틴 01</span>
+                    <span class="text-xs bg-slate-100 text-slate-600 px-2 py-0.5 rounded font-bold">기상 직후</span>
+                </div>
+                <h3 class="font-bold text-slate-900 text-base">모세혈관 확장 손발 털기 30초</h3>
+                <div class="text-xs bg-red-50 text-red-600 p-2.5 rounded-xl font-bold">
+                    ❌ 위험 행동: 일어나자마자 정체된 혈류를 무시하고 뻣뻣한 상태로 바로 움직이는 행동입니다.
+                </div>
+                <p class="text-sm text-slate-700 leading-relaxed">
+                    <strong class="text-indigo-700">✅ 바로 할 수 있는 해결책:</strong><br>
+                    침대에 누운 상태 혹은 걸터앉아 손발을 위로 향하게 하고 가볍게 30초간 털어주세요.
+                </p>
+                <p class="text-xs text-slate-500 bg-slate-50 p-2.5 rounded-xl mt-1">
+                    💡 <strong>왜 그럴까요?</strong><br>
+                    말초혈관에 정체되어 있던 혈액과 체액의 순환을 촉진하여 저림과 부종을 빠르게 완화합니다.
+                </p>
+            </div>
+
+            <div class="bg-white p-5 rounded-2xl border-2 border-slate-100 shadow-sm space-y-2">
+                <div class="flex items-center justify-between">
+                    <span class="text-sm font-heavy text-indigo-600">루틴 02</span>
+                    <span class="text-xs bg-slate-100 text-slate-600 px-2 py-0.5 rounded font-bold">온열 자극</span>
+                </div>
+                <h3 class="font-bold text-slate-900 text-base">따뜻한 물 한 잔으로 체온 올리기</h3>
+                <div class="text-xs bg-red-50 text-red-600 p-2.5 rounded-xl font-bold">
+                    ❌ 위험 행동: 차가운 공기에 노출된 상태에서 냉수나 찬 음료를 마시는 행동입니다.
+                </div>
+                <p class="text-sm text-slate-700 leading-relaxed">
+                    <strong class="text-indigo-700">✅ 바로 할 수 있는 해결책:</strong><br>
+                    기상 직후 따뜻하거나 미지근한 물을 마셔 중심 체온을 높이고 혈관을 이완시켜 주세요.
+                </p>
+                <p class="text-xs text-slate-500 bg-slate-50 p-2.5 rounded-xl mt-1">
+                    💡 <strong>왜 그럴까요?</strong><br>
+                    수축되어 있던 말초 혈관이 확장되면서 손끝과 발끝까지 온기가 원활하게 전달됩니다.
+                </p>
+            </div>
+
+            <div class="bg-white p-5 rounded-2xl border-2 border-slate-100 shadow-sm space-y-2">
+                <div class="flex items-center justify-between">
+                    <span class="text-sm font-heavy text-indigo-600">루틴 03</span>
+                    <span class="text-xs bg-slate-100 text-slate-600 px-2 py-0.5 rounded font-bold">혈류 펌핑</span>
+                </div>
+                <h3 class="font-bold text-slate-900 text-base">발가락 쥐었다 펴기 & 스트레칭</h3>
+                <div class="text-xs bg-red-50 text-red-600 p-2.5 rounded-xl font-bold">
+                    ❌ 위험 행동: 쥐가 자주 나는 근육을 무리하게 강제로 꺾거나 방치하는 행동입니다.
+                </div>
+                <p class="text-sm text-slate-700 leading-relaxed">
+                    <strong class="text-indigo-700">✅ 바로 할 수 있는 해결책:</strong><br>
+                    발가락을 주먹 쥐듯 오므렸다 활짝 펴기를 반복하여 하체 정맥 수축을 유도하세요.
+                </p>
+                <p class="text-xs text-slate-500 bg-slate-50 p-2.5 rounded-xl mt-1">
+                    💡 <strong>왜 그럴까요?</strong><br>
+                    근육 수축 운동이 정맥혈을 심장 쪽으로 밀어올려 경련과 저림 예방에 도움을 줍니다.
+                </p>
+            </div>
+
+            <!-- 👣 혈액순환 케어 3단계 요약 -->
+            <div class="bg-gradient-to-r from-indigo-50 to-blue-50 border-2 border-indigo-100 p-5 rounded-2xl">
+                <h3 class="font-heavy text-slate-900 text-base mb-2">👣 아침 혈액순환 케어 3단계 요약</h3>
+                <p class="text-xs text-slate-600 mb-3">말초 혈관을 깨우는 아침 습관을 실천해 보세요!</p>
+                <ul class="text-sm text-slate-800 space-y-2 font-bold">
+                    <li class="flex items-start"><span class="text-indigo-600 mr-2">•</span> [말초 자극] 기상 직후 손발 가볍게 30초간 털기</li>
+                    <li class="flex items-start"><span class="text-indigo-600 mr-2">•</span> [체온 상승] 따뜻한 물 한 잔으로 수축된 혈관 이완</li>
+                    <li class="flex items-start"><span class="text-indigo-600 mr-2">•</span> [근육 펌핑] 발가락 오므리기 및 스트레칭으로 순환 유도</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- 추천 인기 제품 섹션 -->
+        <section class="mb-8">
+            <h2 class="text-xl font-heavy mb-4 px-1">🛍️ 추천 인기 제품</h2>
+            <div class="space-y-3">
+                <a href="https://link.coupang.com/a/d6YYP2" target="_blank" rel="noopener noreferrer" class="block bg-white p-5 rounded-2xl border-2 border-slate-100 shadow-sm touch-link">
+                    <h3 class="font-bold text-lg">🌿 혈행 개선 은행잎 추출물 & 오메가3</h3>
+                    <p class="text-sm text-slate-500 mt-1">말초 혈액순환과 혈중 중성지질 개선을 돕는 기능성 원료</p>
+                </a>
+                <a href="https://link.coupang.com/a/d5wIIQ" target="_blank" rel="noopener noreferrer" class="block bg-white p-5 rounded-2xl border-2 border-slate-100 shadow-sm touch-link">
+                    <h3 class="font-bold text-lg">🦵 마그네슘 & 비타민 B 복합 영양제</h3>
+                    <p class="text-sm text-slate-500 mt-1">근육 경련(쥐 남 현상) 및 신경 기능 유지에 도움을 주는 필수 영양소</p>
+                </a>
+            </div>
+            <a href="search.html" class="block w-full mt-4 py-3.5 bg-slate-800 text-white text-center font-bold rounded-2xl shadow-md hover:bg-slate-700 transition-colors text-sm">
+                + 전체 제품 검색 및 더보기
+            </a>
+        </section>
+
+        <!-- 하단 액션 버튼 -->
+        <div class="space-y-3 mb-6">
+            <a href="check-list.html" class="block w-full py-3.5 bg-slate-100 text-slate-700 font-bold text-center text-sm rounded-2xl hover:bg-slate-200 transition-colors">
+                🔄 다른 증상 자가진단 해보기
+            </a>
+        </div>
+
+        <!-- 주의사항 및 푸터 -->
+        <p class="text-xs text-slate-400 text-center leading-relaxed">
+            ※ 본 글은 일반적인 건강 정보 제공을 목적하며, 손발 저림과 냉감이 레이노 증후군, 말초신경병증 또는 심혈관 질환과 연관될 수 있으므로 증상이 지속되면 전문의 진료를 받아야 합니다.
+        </p>
+
+    </div>
+
+    <!-- 결과 판정 로직 -->
+    <script>
+        const urlParams = new URLSearchParams(window.location.search);
+        const score = parseInt(urlParams.get('score') || '0');
+
+        const badge = document.getElementById('riskBadge');
+        const title = document.getElementById('resultTitle');
+        const desc = document.getElementById('resultDesc');
+
+        if (score === 0) {
+            badge.className = "inline-block text-xs font-heavy px-3 py-1 rounded-full bg-emerald-100 text-emerald-800 mb-3";
+            badge.innerText = "안심 (혈액순환 양호)";
+            title.innerText = "말초 혈류 및 신경 상태가 매우 양호합니다!";
+            desc.innerText = "현재 혈액순환 저하로 인한 수족냉증이나 부종, 저림 증상이 관찰되지 않습니다. 현재의 건강한 습관을 유지하세요.";
+        } else if (score === 1) {
+            badge.className = "inline-block text-xs font-heavy px-3 py-1 rounded-full bg-amber-100 text-amber-800 mb-3";
+            badge.innerText = "주의 (말초 순환 저하 의심)";
+            title.innerText = "일시적인 말초 혈액순환 저하 및 부종 상태입니다";
+            desc.innerText = "아침 체온이 낮거나 수면 중 혈류 정체로 인해 가벼운 냉감이나 저림이 발생할 수 있습니다. 가벼운 손발 털기와 따뜻한 수분 섭취를 실천해 보세요.";
+        } else {
+            badge.className = "inline-block text-xs font-heavy px-3 py-1 rounded-full bg-red-100 text-red-800 mb-3";
+            badge.innerText = "경고 (만성 수족냉증 / 순환 장애 위험)";
+            title.innerText = "만성 혈액순환 장애 및 말초신경 압박 위험이 높습니다";
+            desc.innerText = "손발의 극심한 시림, 반복적인 근육 경련(쥐), 지속적인 부종과 저림이 있다면 말초혈관질환이나 신경학적 원인일 수 있습니다. 꾸준한 관리와 함께 필요시 전문의 상담을 권장합니다.";
+        }
+    </script>
+</body>
+</html>

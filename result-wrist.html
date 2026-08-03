@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>손목/손저림 진단 결과 - AI 건강검증단</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@400;700;800&display=swap');
+        body { font-family: 'Nanum Gothic', sans-serif; background-color: #fafaf9; }
+        .font-heavy { font-weight: 800; }
+        .touch-link { transition: all 0.1s ease-in-out; }
+        .touch-link:active { transform: scale(0.97); background-color: #f5f5f4; }
+    </style>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6062349022770025"
+     crossorigin="anonymous"></script>
+</head>
+<body class="text-slate-800 pb-20">
+    <div class="max-w-lg mx-auto px-5 pt-8">
+        
+        <!-- 헤더 -->
+        <div class="flex items-center justify-between mb-6 border-b pb-4">
+            <a href="index.html" class="text-slate-500 font-bold text-sm">← 메인으로 돌아가기</a>
+            <span class="text-xs font-bold bg-blue-100 text-blue-800 px-3 py-1 rounded-full">🖐️ 손목/손저림 진단 결과</span>
+        </div>
+
+        <!-- 진단 결과 카드 -->
+        <div id="resultCard" class="bg-white p-6 rounded-3xl border-2 border-slate-100 shadow-md mb-6 text-center">
+            <span id="riskBadge" class="inline-block text-xs font-heavy px-3 py-1 rounded-full mb-3">분석 중...</span>
+            <h1 id="resultTitle" class="text-2xl font-heavy text-slate-900 mb-2">진단 결과를 불러오는 중입니다</h1>
+            <p id="resultDesc" class="text-sm text-slate-600 leading-relaxed"></p>
+        </div>
+
+        <!-- 손목 전용 1분 해결 루틴 (전달해주신 블로그 포스팅 문구 반영) -->
+        <div class="space-y-4 mb-8">
+            <h2 class="text-xl font-heavy text-slate-900 px-1">💡 밤마다 손 저릴 때! 1분 손목 안심 루틴</h2>
+
+            <!-- 루틴 1 -->
+            <div class="bg-white p-5 rounded-2xl border-2 border-slate-100 shadow-sm space-y-2">
+                <div class="flex items-center justify-between">
+                    <span class="text-sm font-heavy text-blue-600">루틴 01</span>
+                    <span class="text-xs bg-slate-100 text-slate-600 px-2 py-0.5 rounded font-bold">10초 버티기 (3회)</span>
+                </div>
+                <h3 class="font-bold text-slate-900 text-base">손을 터는 대신 '합장 자세 스트레칭'</h3>
+                <div class="text-xs bg-red-50 text-red-600 p-2.5 rounded-xl font-bold">
+                    ❌ 위험 행동: 저리다고 손을 위아래로 강하게 털어버리는 행동입니다.
+                </div>
+                <p class="text-sm text-slate-700 leading-relaxed">
+                    <strong class="text-blue-700">✅ 바로 할 수 있는 해결책:</strong><br>
+                    양 손바닥을 가슴 앞에서 붙이고(합장), 손바닥이 떨어지지 않는 선에서 아래로 지그시 내려 10초간 버티세요. (3회)
+                </p>
+                <p class="text-xs text-slate-500 bg-slate-50 p-2.5 rounded-xl mt-1">
+                    💡 <strong>왜 그럴까요?</strong><br>
+                    손목 안쪽의 좁아진 신경 통로를 부드럽게 늘려주어 꽉 눌려 있던 신경의 숨통을 트여줍니다.
+                </p>
+            </div>
+
+            <!-- 루틴 2 -->
+            <div class="bg-white p-5 rounded-2xl border-2 border-slate-100 shadow-sm space-y-2">
+                <div class="flex items-center justify-between">
+                    <span class="text-sm font-heavy text-blue-600">루틴 02</span>
+                    <span class="text-xs bg-slate-100 text-slate-600 px-2 py-0.5 rounded font-bold">수면 자세 교정</span>
+                </div>
+                <h3 class="font-bold text-slate-900 text-base">수면 중 '손목 일자 유지하기'</h3>
+                <div class="text-xs bg-red-50 text-red-600 p-2.5 rounded-xl font-bold">
+                    ❌ 위험 행동: 자는 동안 손목을 가슴 쪽으로 바짝 꺾거나 베개 밑에 구부려 넣고 자는 습관입니다.
+                </div>
+                <p class="text-sm text-slate-700 leading-relaxed">
+                    <strong class="text-blue-700">✅ 바로 할 수 있는 해결책:</strong><br>
+                    잘 때 손목 아래에 작은 타월을 접어 괴어주어 손목이 일자로 곧게 펴지도록 해주세요.
+                </p>
+                <p class="text-xs text-slate-500 bg-slate-50 p-2.5 rounded-xl mt-1">
+                    💡 <strong>왜 그럴까요?</strong><br>
+                    손목이 꺾인 상태로 장시간 자면 신경 압박이 최고조에 달해 새벽 손 저림의 직접적인 원인이 됩니다.
+                </p>
+            </div>
+
+            <!-- 루틴 3 -->
+            <div class="bg-white p-5 rounded-2xl border-2 border-slate-100 shadow-sm space-y-2">
+                <div class="flex items-center justify-between">
+                    <span class="text-sm font-heavy text-blue-600">루틴 03</span>
+                    <span class="text-xs bg-slate-100 text-slate-600 px-2 py-0.5 rounded font-bold">10회 반복</span>
+                </div>
+                <h3 class="font-bold text-slate-900 text-base">식전·식후 '손가락 잼잼 쫙 펴기'</h3>
+                <div class="text-xs bg-red-50 text-red-600 p-2.5 rounded-xl font-bold">
+                    ❌ 위험 행동: 손가락을 굽힌 채 굳어있는 상태를 방치하는 행동입니다.
+                </div>
+                <p class="text-sm text-slate-700 leading-relaxed">
+                    <strong class="text-blue-700">✅ 바로 할 수 있는 해결책:</strong><br>
+                    손가락을 끝까지 쫙 폈다가 천천히 잼잼 주먹을 쥐었다 펴는 동작을 10회 반복하세요.
+                </p>
+                <p class="text-xs text-slate-500 bg-slate-50 p-2.5 rounded-xl mt-1">
+                    💡 <strong>왜 그럴까요?</strong><br>
+                    손목과 손가락 근육의 미세 혈액순환을 촉진해 신경 주변의 부종과 저림을 완화해 줍니다.
+                </p>
+            </div>
+
+            <!-- 👣 손 저림 예방 1분 루틴 요약 -->
+            <div class="bg-gradient-to-r from-blue-50 to-indigo-50 border-2 border-blue-100 p-5 rounded-2xl">
+                <h3 class="font-heavy text-slate-900 text-base mb-2">👣 손 저림 예방 1분 루틴 요약</h3>
+                <p class="text-xs text-slate-600 mb-3">매일 이것만 기억하세요!</p>
+                <ul class="text-sm text-slate-800 space-y-2 font-bold">
+                    <li class="flex items-start"><span class="text-blue-600 mr-2">•</span> [합장 스트레칭] 손 털지 말고 합장하고 아래로 10초 늘려주기</li>
+                    <li class="flex items-start"><span class="text-blue-600 mr-2">•</span> [손목 일자 수면] 자는 동안 손목이 꺾이지 않게 수건 받쳐주기</li>
+                    <li class="flex items-start"><span class="text-blue-600 mr-2">•</span> [손가락 잼잼] 손가락 끝까지 쫙 폈다 쥐기 10회 반복하기</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- 추천 인기 제품 섹션 (추가) -->
+        <section class="mb-8">
+            <h2 class="text-xl font-heavy mb-4 px-1">🛍️ 추천 인기 제품</h2>
+            <div class="space-y-3">
+                <a href="https://link.coupang.com/a/d6YYP2" target="_blank" rel="noopener noreferrer" class="block bg-white p-5 rounded-2xl border-2 border-slate-100 shadow-sm touch-link">
+                    <h3 class="font-bold text-lg">🩸 자가 혈당 측정기 세트</h3>
+                    <p class="text-sm text-slate-500 mt-1">집에서 편하게 관리하는 식후 혈당</p>
+                </a>
+                <a href="https://link.coupang.com/a/d5wIIQ" target="_blank" rel="noopener noreferrer" class="block bg-white p-5 rounded-2xl border-2 border-slate-100 shadow-sm touch-link">
+                    <h3 class="font-bold text-lg">🧠 고함량 포스파티딜세린</h3>
+                    <p class="text-sm text-slate-500 mt-1">기억력이 걱정될 때 꼭 필요한 영양제</p>
+                </a>
+            </div>
+            <a href="search.html" class="block w-full mt-4 py-3.5 bg-slate-800 text-white text-center font-bold rounded-2xl shadow-md hover:bg-slate-700 transition-colors text-sm">
+                + 전체 제품 검색 및 더보기
+            </a>
+        </section>
+
+        <!-- 하단 액션 버튼 -->
+        <div class="space-y-3 mb-6">
+            <a href="https://blog.naver.com/aihealthcheck/224365592689" target="_blank" rel="noopener noreferrer" class="block w-full py-4 bg-emerald-600 text-white font-heavy text-center text-base rounded-2xl shadow-lg hover:bg-emerald-700 transition-colors">
+                📖 관련 네이버 블로그 원본글 읽기
+            </a>
+            <a href="check-list.html" class="block w-full py-3.5 bg-slate-100 text-slate-700 font-bold text-center text-sm rounded-2xl hover:bg-slate-200 transition-colors">
+                🔄 다른 증상 자가진단 해보기
+            </a>
+        </div>
+
+        <!-- 주의사항 및 푸터 -->
+        <p class="text-xs text-slate-400 text-center leading-relaxed">
+            ※ 본 자가진단 및 건강 정보는 일반적인 정보 제공 목적이며, 지속적인 손 저림이나 통증이 동반되는 경우 전문의의 진료를 받으셔야 합니다.
+        </p>
+
+    </div>
+
+    <!-- 결과 판정 로직 -->
+    <script>
+        const urlParams = new URLSearchParams(window.location.search);
+        const score = parseInt(urlParams.get('score') || '0');
+
+        const badge = document.getElementById('riskBadge');
+        const title = document.getElementById('resultTitle');
+        const desc = document.getElementById('resultDesc');
+
+        if (score === 0) {
+            badge.className = "inline-block text-xs font-heavy px-3 py-1 rounded-full bg-emerald-100 text-emerald-800 mb-3";
+            badge.innerText = "안심 (위험도 낮음)";
+            title.innerText = "손목 신경 및 관절 상태가 양호합니다!";
+            desc.innerText = "현재 수근관(손목터널) 통로 상태는 양호합니다. 평소 집안일이나 손을 사용한 후 가볍게 합장 스트레칭을 해주세요.";
+        } else if (score === 1 || score === 2) {
+            badge.className = "inline-block text-xs font-heavy px-3 py-1 rounded-full bg-amber-100 text-amber-800 mb-3";
+            badge.innerText = "주의 (주의 필요)";
+            title.innerText = "수근관 통로가 좁아져 신경 압박 가능성이 있습니다";
+            desc.innerText = "수면 중 손목이 꺾이거나 일상생활 중 손목 신경 통로가 눌리고 있는 신호입니다. 저리다고 강하게 털지 마시고 아래 1분 안심 루틴을 실천해 보세요.";
+        } else {
+            badge.className = "inline-block text-xs font-heavy px-3 py-1 rounded-full bg-red-100 text-red-800 mb-3";
+            badge.innerText = "경고 (위험도 높음)";
+            title.innerText = "손목터널증후군 심화 위험 단계입니다";
+            desc.innerText = "밤에 손이 찌릿하고 마비된 듯한 통증으로 잠에서 깨는 상태입니다. 수면 중 손목 일자를 유지해주시고 지속 시 전문의 진료를 권장합니다.";
+        }
+    </script>
+</body>
+</html>

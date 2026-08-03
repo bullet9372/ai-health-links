@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>허리 관절 진단 결과 - AI 건강검증단</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@400;700;800&display=swap');
+        body { font-family: 'Nanum Gothic', sans-serif; background-color: #fafaf9; }
+        .font-heavy { font-weight: 800; }
+    </style>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6062349022770025"
+     crossorigin="anonymous"></script>
+</head>
+<body class="text-slate-800 pb-20">
+    <div class="max-w-lg mx-auto px-5 pt-8">
+        
+        <!-- 헤더 -->
+        <div class="flex items-center justify-between mb-6 border-b pb-4">
+            <a href="index.html" class="text-slate-500 font-bold text-sm">← 메인으로 돌아가기</a>
+            <span class="text-xs font-bold bg-blue-100 text-blue-800 px-3 py-1 rounded-full">🦴 허리 관절 진단 결과</span>
+        </div>
+
+        <!-- 진단 결과 카드 -->
+        <div id="resultCard" class="bg-white p-6 rounded-3xl border-2 border-slate-100 shadow-md mb-6 text-center">
+            <span id="riskBadge" class="inline-block text-xs font-heavy px-3 py-1 rounded-full mb-3">분석 중...</span>
+            <h1 id="resultTitle" class="text-2xl font-heavy text-slate-900 mb-2">진단 결과를 불러오는 중입니다</h1>
+            <p id="resultDesc" class="text-sm text-slate-600 leading-relaxed"></p>
+        </div>
+
+        <!-- 허리 전용 1분 해결 루틴 -->
+        <div class="space-y-4 mb-8">
+            <h2 class="text-xl font-heavy text-slate-900 px-1">💡 기상 직후 허리 깨우는 1분 루틴</h2>
+
+            <div class="bg-white p-5 rounded-2xl border-2 border-slate-100 shadow-sm space-y-2">
+                <div class="flex items-center justify-between">
+                    <span class="text-sm font-heavy text-blue-600">루틴 01</span>
+                    <span class="text-xs bg-slate-100 text-slate-600 px-2 py-0.5 rounded font-bold">침대 위 30초</span>
+                </div>
+                <h3 class="font-bold text-slate-900 text-base">누워서 무릎 가슴 쪽으로 끌어당기기</h3>
+                <div class="text-xs bg-red-50 text-red-600 p-2.5 rounded-xl font-bold">
+                    ❌ 위험 행동: 아침에 일어나자마자 상체를 바로 획 일으키지 마세요!
+                </div>
+                <p class="text-sm text-slate-700 leading-relaxed">
+                    <strong class="text-blue-700">✅ 바로 할 수 있는 해결책:</strong><br>
+                    천장을 보고 누운 상태에서 양 무릎을 감싸 쥐고 가슴 쪽으로 천천히 끌어당겨 굳은 요추 관절을 부드럽게 이완해 줍니다.
+                </p>
+            </div>
+
+            <div class="bg-white p-5 rounded-2xl border-2 border-slate-100 shadow-sm space-y-2">
+                <div class="flex items-center justify-between">
+                    <span class="text-sm font-heavy text-blue-600">루틴 02</span>
+                    <span class="text-xs bg-slate-100 text-slate-600 px-2 py-0.5 rounded font-bold">일어나는 자세</span>
+                </div>
+                <h3 class="font-bold text-slate-900 text-base">옆으로 몸 돌려서 일어나기</h3>
+                <div class="text-xs bg-red-50 text-red-600 p-2.5 rounded-xl font-bold">
+                    ❌ 위험 행동: 복근 힘만으로 일직선으로 몸을 일으키는 행동!
+                </div>
+                <p class="text-sm text-slate-700 leading-relaxed">
+                    <strong class="text-blue-700">✅ 바로 할 수 있는 해결책:</strong><br>
+                    몸을 옆으로 구부린 후 손바닥으로 침대를 짚으면서 상체를 일으키면 허리 디스크에 가해지는 압력을 줄일 수 있습니다.
+                </p>
+            </div>
+        </div>
+
+        <!-- 하단 액션 버튼 -->
+        <div class="space-y-3">
+            <a href="https://blog.naver.com/aihealthcheck/224364220100" target="_blank" rel="noopener noreferrer" class="block w-full py-4 bg-emerald-600 text-white font-heavy text-center text-base rounded-2xl shadow-lg hover:bg-emerald-700 transition-colors">
+                📖 허리 관련 블로그 원본 포스팅 읽기
+            </a>
+            <a href="check-list.html" class="block w-full py-3.5 bg-slate-100 text-slate-700 font-bold text-center text-sm rounded-2xl hover:bg-slate-200 transition-colors">
+                🔄 다른 증상 자가진단 해보기
+            </a>
+        </div>
+    </div>
+
+    <script>
+        const urlParams = new URLSearchParams(window.location.search);
+        const score = parseInt(urlParams.get('score') || '0');
+
+        const badge = document.getElementById('riskBadge');
+        const title = document.getElementById('resultTitle');
+        const desc = document.getElementById('resultDesc');
+
+        if (score === 0) {
+            badge.className = "inline-block text-xs font-heavy px-3 py-1 rounded-full bg-emerald-100 text-emerald-800 mb-3";
+            badge.innerText = "안심 (위험도 낮음)";
+            title.innerText = "아침 허리 유연성 및 관절 상태가 좋습니다!";
+            desc.innerText = "기상 시 허리 굳음 현상이 적습니다. 허리 기립근을 기상 직후 가볍게 풀어주는 생활 습관을 유지해 주세요.";
+        } else if (score === 1 || score === 2) {
+            badge.className = "inline-block text-xs font-heavy px-3 py-1 rounded-full bg-amber-100 text-amber-800 mb-3";
+            badge.innerText = "주의 (주의 필요)";
+            title.innerText = "기상 직후 요추 관절이 경직되어 있습니다";
+            desc.innerText = "수면 중 자세 변화가 없거나 온도가 낮아 허리 근육이 굳어진 상태입니다. 침대에서 일어날 때 갑작스러운 동작을 자제해 주세요.";
+        } else {
+            badge.className = "inline-block text-xs font-heavy px-3 py-1 rounded-full bg-red-100 text-red-800 mb-3";
+            badge.innerText = "경고 (위험도 높음)";
+            title.innerText = "요추 디스크 압박 및 만성 경직 위험이 높습니다";
+            desc.innerText = "아침에 일어날 때 허리가 안 펴지거나 통증이 있다면 침대에서 옆으로 누워 안전하게 일어나는 습관을 꼭 실천해 주세요.";
+        }
+    </script>
+</body>
+</html>
